@@ -1,5 +1,6 @@
 html {
-  font-size: 20px; }
+  font-size: 20px;
+  scroll-behavior: smooth; }
 
 body {
   overflow-x: hidden; }
@@ -38,7 +39,15 @@ header {
 .logo > a {
   color: #2196f3;
   font-family: "Poppins";
-  font-size: 0.9rem; }
+  font-size: 0.9rem;
+  -webkit-transition-duration: .3s;
+  -o-transition-duration: .3s;
+  transition-duration: .3s; }
+  .logo > a:hover {
+    opacity: .6;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s; }
 
 .header-main {
   display: -webkit-flex;
@@ -70,16 +79,31 @@ header {
     -ms-flex-direction: column;
     flex-direction: column; }
     .header-main li a span {
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s;
       font-family: "Montserrat";
       font-size: 0.75rem;
-      color: black;
-      /*font-weight: 500;*/ }
+      color: black; }
     .header-main li a div {
       margin: 0 auto;
       width: 0%;
       height: 2px;
       background-color: #2196f3;
-      margin-top: 8px; }
+      margin-top: 8px;
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s; }
+  .header-main li:hover a span {
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+    color: #2196f3; }
+  .header-main li:hover a div {
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+    width: 50%; }
   .header-main li.active a span {
     color: #2196f3; }
   .header-main li.active a div {
@@ -116,13 +140,22 @@ header {
     border-radius: 40px;
     font-family: "Montserrat";
     font-weight: bold;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
     font-size: 0.6rem; }
   .header-btns .registration_header-btn {
     color: white;
     background-color: #950abe;
     margin-right: 12px; }
+    .header-btns .registration_header-btn:hover {
+      color: #950abe;
+      background-color: inherit; }
   .header-btns .login_header-btn {
     color: #950abe; }
+    .header-btns .login_header-btn:hover {
+      color: white;
+      background-color: #950abe; }
 
 .social_header {
   display: -webkit-flex;
@@ -134,6 +167,15 @@ header {
   display: flex; }
   .social_header a {
     margin-right: 20px; }
+    .social_header a svg path {
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s; }
+    .social_header a svg:hover path {
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s;
+      fill: #2196f3; }
   .social_header .lang {
     display: -webkit-flex;
     display: -moz-flex;
@@ -214,6 +256,15 @@ header {
       height: 30px;
       width: 25px;
       opacity: .6; }
+      .name a svg path {
+        -webkit-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        transition-duration: .3s; }
+      .name a svg:hover > path {
+        fill: #2196f3;
+        -webkit-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        transition-duration: .3s; }
   .name a:last-child svg {
     height: 25px;
     width: 20px;
@@ -223,12 +274,23 @@ header {
   font-family: "Montserrat";
   font-size: 1rem;
   color: black;
-  opacity: .6;
   line-height: 1.5rem;
   letter-spacing: -0.009px; }
 
+.description_text {
+  opacity: .6; }
+
 .webcoupon {
-  color: #2196f3; }
+  color: #2196f3;
+  -webkit-transition-duration: .3s;
+  -o-transition-duration: .3s;
+  transition-duration: .3s;
+  opacity: .6; }
+  .webcoupon:hover {
+    opacity: 1;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s; }
 
 .content-btns {
   display: -webkit-flex;
@@ -260,17 +322,42 @@ header {
     border-radius: 40px;
     font-family: "Montserrat";
     font-weight: bold;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
     font-size: 0.9rem; }
   .content-btns .singUp_content-btn {
     color: white;
     background-color: #950abe;
     margin-right: 20px; }
+    .content-btns .singUp_content-btn:hover {
+      color: #950abe;
+      background-color: white; }
   .content-btns .aboutUs_content-btn {
     color: #950abe; }
+    .content-btns .aboutUs_content-btn:hover {
+      color: white;
+      background-color: #950abe; }
+      .content-btns .aboutUs_content-btn:hover svg {
+        -webkit-transform: translatex(35px);
+        -ms-transform: translatex(35px);
+        transform: translatex(35px); }
+        .content-btns .aboutUs_content-btn:hover svg path {
+          -webkit-transition-duration: .3s;
+          -o-transition-duration: .3s;
+          transition-duration: .3s;
+          fill: white; }
     .content-btns .aboutUs_content-btn svg {
-      -webkit-transform: translatex(25px);
-      -ms-transform: translatex(25px);
-      transform: translatex(25px); }
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s;
+      -webkit-transform: translatex(20px);
+      -ms-transform: translatex(20px);
+      transform: translatex(20px); }
+      .content-btns .aboutUs_content-btn svg path {
+        -webkit-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        transition-duration: .3s; }
 
 .illust_first_page {
   height: 43.9814vh;
@@ -321,6 +408,9 @@ header {
       width: 65px;
       height: 65px;
       border-radius: 50%;
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s;
       background-color: rgba(149, 10, 190, 0.3); }
       .next-btn a .next img {
         display: block;
@@ -331,6 +421,12 @@ header {
         height: 50px;
         border-radius: 50%;
         background-color: rgba(149, 10, 190, 0.3); }
+  .next-btn:hover a > .next {
+    width: 100%;
+    height: 100%;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s; }
 
 .second_page > * {
   margin-left: 21.6145%; }
@@ -413,17 +509,42 @@ header {
     border-radius: 40px;
     font-family: "Montserrat";
     font-weight: bold;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
     font-size: 0.9rem; }
   .advan-btns .singUp_advan-btn {
     color: white;
     background-color: #950abe;
     margin-right: 20px; }
+    .advan-btns .singUp_advan-btn:hover {
+      color: #950abe;
+      background-color: white; }
   .advan-btns .comments_advan-btn {
     color: #950abe; }
+    .advan-btns .comments_advan-btn:hover {
+      color: white;
+      background-color: #950abe; }
+      .advan-btns .comments_advan-btn:hover svg {
+        -webkit-transform: translatex(35px);
+        -ms-transform: translatex(35px);
+        transform: translatex(35px); }
+        .advan-btns .comments_advan-btn:hover svg path {
+          -webkit-transition-duration: .3s;
+          -o-transition-duration: .3s;
+          transition-duration: .3s;
+          fill: white; }
     .advan-btns .comments_advan-btn svg {
-      -webkit-transform: translatex(15px);
-      -ms-transform: translatex(15px);
-      transform: translatex(15px); }
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s;
+      -webkit-transform: translatex(20px);
+      -ms-transform: translatex(20px);
+      transform: translatex(20px); }
+      .advan-btns .comments_advan-btn svg path {
+        -webkit-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        transition-duration: .3s; }
 
 .third_page {
   display: -webkit-box;
@@ -503,17 +624,43 @@ header {
       border-radius: 40px;
       font-family: "Montserrat";
       font-weight: bold;
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s;
       font-size: 0.9rem; }
       .acq .acq-btns a svg {
         -webkit-transform: translatex(20px);
         -ms-transform: translatex(20px);
-        transform: translatex(20px); }
+        transform: translatex(20px);
+        -webkit-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        transition-duration: .3s; }
+        .acq .acq-btns a svg path {
+          -webkit-transition-duration: .3s;
+          -o-transition-duration: .3s;
+          transition-duration: .3s; }
     .acq .acq-btns .read-btn {
       color: white;
       background-color: #950abe;
       margin-right: 20px; }
+      .acq .acq-btns .read-btn:hover {
+        color: #950abe;
+        background-color: white; }
+        .acq .acq-btns .read-btn:hover svg > path {
+          fill: #950abe;
+          -webkit-transition-duration: .3s;
+          -o-transition-duration: .3s;
+          transition-duration: .3s; }
     .acq .acq-btns .save-btn {
       color: #950abe; }
+      .acq .acq-btns .save-btn:hover {
+        color: white;
+        background-color: #950abe; }
+        .acq .acq-btns .save-btn:hover svg > path {
+          fill: white;
+          -webkit-transition-duration: .3s;
+          -o-transition-duration: .3s;
+          transition-duration: .3s; }
 
 footer {
   width: 100%;
@@ -574,7 +721,16 @@ footer {
       color: white;
       font-size: 0.5rem;
       text-decoration: underline;
-      opacity: .8; }
+      opacity: .8;
+      font-weight: 500;
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s; }
+      .logo-footer .regulation a:hover {
+        text-decoration: none;
+        -webkit-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        transition-duration: .3s; }
     .logo-footer .regulation a:not(:last-child) {
       margin-bottom: 12px; }
 
@@ -609,13 +765,29 @@ footer {
       font-family: "Montserrat";
       font-size: 0.75rem;
       color: white;
-      opacity: .6; }
+      opacity: .6;
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s; }
     .main-footer > ul li a div {
       margin: 0 auto;
       width: 0%;
       height: 2px;
       background-color: white;
-      margin-top: 8px; }
+      margin-top: 8px;
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s; }
+  .main-footer > ul li:hover > a span {
+    opacity: 1;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s; }
+  .main-footer > ul li:hover > a div {
+    width: 50%;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s; }
   .main-footer > ul li.active a span {
     opacity: 1; }
   .main-footer > ul li.active a div {
@@ -649,14 +821,34 @@ footer {
     border-radius: 40px;
     font-family: "Montserrat";
     font-weight: bold;
+    -webkit-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
     font-size: 0.6rem;
     border: 3px solid white; }
   .footer-btns .registration_footer-btn {
     color: #2196f3;
     background-color: white;
     margin-right: 12px; }
+    .footer-btns .registration_footer-btn:hover {
+      color: white;
+      background-color: inherit; }
   .footer-btns .login_footer-btn {
     color: white; }
+    .footer-btns .login_footer-btn:hover {
+      color: #2196f3;
+      background-color: white; }
+
+.social-footer a > svg > path {
+  -webkit-transition-duration: .3s;
+  -o-transition-duration: .3s;
+  transition-duration: .3s; }
+
+.social-footer a:hover > svg > path {
+  -webkit-transition-duration: .3s;
+  -o-transition-duration: .3s;
+  transition-duration: .3s;
+  fill: rgba(255, 255, 255, 0.6); }
 
 .social-footer a:first-child {
   margin-right: 30px; }

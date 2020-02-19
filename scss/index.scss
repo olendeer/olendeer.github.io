@@ -19,11 +19,13 @@ $colorViolet: #950abe;
 	border-radius: 40px;
 	font-family: "Montserrat";
 	font-weight: bold;
+	transition-duration: .3s;
 }
 
 
 html{
 	font-size: 20px;
+	scroll-behavior: smooth;
 }
 
 body{
@@ -62,6 +64,11 @@ header{
 		color: $colorBlue;
 		font-family: "Poppins";
 		font-size: 0.9rem;
+		transition-duration: .3s;
+		&:hover{
+			opacity: .6;
+			transition-duration: .3s;
+		}
 	}
 }
 
@@ -85,10 +92,10 @@ header{
 			display: flex;
 			flex-direction: column;
 			span{
+				transition-duration: .3s;
 				font-family: "Montserrat";
 				font-size: 0.75rem;
 				color: black;
-				/*font-weight: 500;*/
 			}
 			div{
 				margin: 0 auto;
@@ -96,6 +103,19 @@ header{
 				height: 2px;
 				background-color: $colorBlue;
 				margin-top: 8px;
+				transition-duration: .3s;
+			}
+		}
+		&:hover{
+			a{
+				span{
+					transition-duration: .3s;
+					color: $colorBlue;
+				}
+				div{
+					transition-duration: .3s;
+					width: 50%;
+				}
 			}
 		}
 	}
@@ -121,14 +141,23 @@ header{
 	a{
 		@include buttonViolet(145px, 45px);
 		font-size: 0.6rem;
+
 	}
 	.registration_header-btn{
 		color: white;
 		background-color: $colorViolet;
 		margin-right: 12px;
+		&:hover{
+			color: $colorViolet;
+			background-color: inherit;
+		}
 	}
 	.login_header-btn{
 		color: $colorViolet;
+		&:hover{
+			color: white;
+			background-color: $colorViolet;
+		}
 	}
 }
 
@@ -140,6 +169,17 @@ header{
 	display: flex;
 	a{
 		margin-right: 20px;
+		svg{
+			path{
+				transition-duration: .3s;
+			}
+			&:hover{
+				path{
+					transition-duration: .3s;
+					fill: $colorBlue;
+				}
+			}
+		}
 	}
 	.lang{
 		display: -webkit-flex;
@@ -207,6 +247,13 @@ header{
 			height: 30px;
 			width: 25px;
 			opacity: .6;
+			path{
+				transition-duration: .3s;
+			}
+			&:hover > path{
+				fill: $colorBlue;
+				transition-duration: .3s;
+			}
 		}
 	}
 	a:last-child{
@@ -222,13 +269,22 @@ header{
 	font-family: "Montserrat";
 	font-size: 1rem;
 	color: black;
-	opacity: .6;
 	line-height: 1.5rem;
 	letter-spacing: -0.009px;
 }
 
+.description_text{
+	opacity: .6;
+}
+
 .webcoupon{
 	color: $colorBlue;
+	transition-duration: .3s;
+	opacity: .6;
+	&:hover{
+		opacity: 1;
+		transition-duration: .3s;
+	}
 }
 
 .content-btns{
@@ -245,11 +301,30 @@ header{
 		color: white;
 		background-color: $colorViolet;
 		margin-right: 20px;
+		&:hover{
+			color: $colorViolet;
+			background-color: white;
+		}
 	}
 	.aboutUs_content-btn{
 		color: $colorViolet;
+		&:hover{
+			color: white;
+			background-color:  $colorViolet;
+			svg{
+				transform: translatex(35px);
+				path{
+					transition-duration: .3s;
+					fill: white;
+				}
+			}
+		}
 		svg{
-			transform: translatex(25px);
+			transition-duration: .3s;
+			transform: translatex(20px);
+			path{
+				transition-duration: .3s;
+			}
 		}
 	}
 }
@@ -293,6 +368,7 @@ header{
 			width: 65px;
 			height: 65px;
 			border-radius: 50%;
+			transition-duration: .3s;
 			background-color: transparentize($colorViolet, .7);
 			img{
 				display: block;
@@ -303,6 +379,13 @@ header{
 				border-radius: 50%;
 				background-color: transparentize($colorViolet, .7);
 			}
+		}
+	}
+	&:hover{
+		a > .next{
+			width: 100%;
+			height: 100%;
+			transition-duration: .3s;
 		}
 	}
 }
@@ -364,11 +447,30 @@ header{
 		color: white;
 		background-color: $colorViolet;
 		margin-right: 20px;
+		&:hover{
+			color: $colorViolet;
+			background-color: white;
+		}
 	}
 	.comments_advan-btn{
 		color: $colorViolet;
+		&:hover{
+			color: white;
+			background-color:  $colorViolet;
+			svg{
+				transform: translatex(35px);
+				path{
+					transition-duration: .3s;
+					fill: white;
+				}
+			}
+		}
 		svg{
-			transform: translatex(15px);
+			transition-duration: .3s;
+			transform: translatex(20px);
+			path{
+				transition-duration: .3s;
+			}
 		}
 	}
 }
@@ -420,15 +522,35 @@ header{
 			font-size: 0.9rem;
 			svg{
 				transform: translatex(20px);
+				transition-duration: .3s;
+				path{
+					transition-duration: .3s;
+				}
 			}
 		}
 		.read-btn{
 			color: white;
 			background-color: $colorViolet;
 			margin-right: 20px;
+			&:hover{
+				color: $colorViolet;
+				background-color: white;
+				svg > path{
+					fill: $colorViolet;
+					transition-duration: .3s;
+				}
+			}
 		}
 		.save-btn{
 			color: $colorViolet;
+			&:hover{
+				color: white;
+				background-color: $colorViolet;
+				svg > path{
+					fill: white;
+					transition-duration: .3s;
+				}
+			}
 		}
 	}
 }
@@ -474,6 +596,12 @@ footer{
 			font-size: 0.5rem;
 			text-decoration: underline;
 			opacity: .8;
+			font-weight: 500;
+			transition-duration: .3s;
+			&:hover{
+				text-decoration: none;
+				transition-duration: .3s;
+			}
 		}
 		a:not(:last-child){
 			margin-bottom: 12px;
@@ -490,8 +618,6 @@ footer{
 	min-width: 480px;
 	transform: translatey(6px);
 	justify-content: space-between;
-	// margin-left: 280px;
-	// margin-right: 210px;
 	li{
 		a{
 			display: -webkit-flex;
@@ -505,6 +631,7 @@ footer{
 				font-size: 0.75rem;
 				color: white;
 				opacity: .6;
+				transition-duration: .3s;
 			}
 			div{
 				margin: 0 auto;
@@ -512,6 +639,17 @@ footer{
 				height: 2px;
 				background-color: white;
 				margin-top: 8px;
+				transition-duration: .3s;
+			}
+		}
+		&:hover > a{
+			span{
+				opacity: 1;
+				transition-duration: .3s;
+			}
+			div{
+				width: 50%;
+				transition-duration: .3s;
 			}
 		}
 	}
@@ -540,12 +678,27 @@ footer{
 		color: $colorBlue;
 		background-color: white;
 		margin-right: 12px;
+		&:hover{
+			color: white;
+			background-color: inherit;
+		}
 	}
 	.login_footer-btn{
 		color: white;
+		&:hover{
+			color: $colorBlue;
+			background-color: white;
+		}
 	}
 }
 .social-footer{
+	a > svg > path{
+		transition-duration: .3s;
+	}
+	a:hover > svg > path{
+		transition-duration: .3s;
+		fill: transparentize(white, .4);
+	}
 	a:first-child{
 		margin-right: 30px;
 	}
