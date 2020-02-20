@@ -217,6 +217,7 @@ header{
 .description{
 	width: 535px;
 	height: 43.9814vh;
+	max-height: 500px;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -498,6 +499,8 @@ header{
 .acq{
 	width: 730px;
 	height: 46.496vh;
+	min-height: 300px;
+	max-height: 500px;
 	margin-left: 21.6145%;
 	margin-bottom: 310px;
 	display: -webkit-flex;
@@ -581,6 +584,7 @@ footer{
 	flex-direction: column;
 	padding-top: 23px;
 	margin-right: 170px;
+	min-width: 200px;
 	a{
 		font-family: "Poppins";
 		font-size: 0.9rem;
@@ -693,6 +697,7 @@ footer{
 	}
 }
 .social-footer{
+	min-width: 75px;
 	a > svg > path{
 		transition-duration: .3s;
 	}
@@ -731,15 +736,11 @@ footer{
 		margin-left: 19.6145%;
 	}
 	.logo-footer{
-		min-width: 183.17px;
 		margin-right: 9.9416%;
 	}
 	.footer-btns{
 		margin-left: 11.0528%;
 		margin-right: 14.0353%;
-	}
-	.social-footer{
-		min-width: 75px;
 	}
 }
 @media screen and (max-width: 1680px){
@@ -812,7 +813,7 @@ footer{
 		margin-right: 5.0353%;
 	}
 }
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1600px){
 	html{
 		font-size: 15px;
 	}
@@ -822,9 +823,9 @@ footer{
 	header{
 		width: 89.062%;
 	}
-	.content_first_page{
-		justify-content: unset;
-	}
+	// .content_first_page{
+	// 	justify-content: unset;
+	// }
 	.header-main{
 		min-width: 360px;
 		margin-left: 10.9375%;
@@ -921,6 +922,9 @@ footer{
 	}
 	.content_first_page, .second_page > *, .acq{
 		margin-left: 17.6145%;
+	}
+	.content_first_page{
+		margin-left: auto;
 	}
 	.advan{
 		width: 817.5px;
@@ -1029,11 +1033,6 @@ footer{
 		}
 	}
 }
-@media screen and (max-width: 1440px) and (min-height: 900px){
-	.third_page{
-		padding-top: 260px;
-	}
-}
 @media screen and (max-width: 1280px){
 	.header-main{
 		margin-left: 8.9375%;
@@ -1061,10 +1060,26 @@ footer{
 		margin-left: 2.0528%
 	}
 }
-@media screen and (max-height: 730px){
-	.acq{
-		margin-bottom: 23.7037vh;
+@media screen and (max-height: 1000px){
+	.third_page{
+		padding-top: 160px;
 	}
+	.acq{
+		margin-bottom: 20.7037vh;
+	}
+}
+@media screen and (max-height: 800px){
+	.third_page{
+		padding-top: 120px;
+	}
+	.acq{
+		margin-bottom: 20.7037vh;
+	}
+}
+@media screen and (max-height: 730px){
+	// .acq{
+	// 	margin-bottom: 23.7037vh;
+	// }
 }
 @media screen and (max-height: 700px){
 	.next-btn{
@@ -1073,10 +1088,21 @@ footer{
 	.description{
 		min-height: 310px;
 	}
+	.third_page{
+		padding-top: 100px;
+	}
 	.acq{
 		margin-bottom: 21.7037vh;
 	}
 	section{
 		padding: 35px 0;
+	}
+}
+@media screen and (min-width: 1440px) and (min-height: 600px) and (max-height: 700px){
+	.next-btn {
+	    margin-top: 7.9629vh;
+	}
+	.illust_third_page1{
+		transform: translate(-3.447vw, 3.888vh);
 	}
 }

@@ -8,7 +8,7 @@ window.onresize = leftMargin;
 
 function leftMargin(){
     var width = window.innerWidth;
-    if(width >= 1440 && width <= 1680 || width >= 1024 && width <= 1280)
+    if(width >= 1024 && width <= 1680)
     {
         var content = document.querySelector('.description');
         var coordinateX = content.getBoundingClientRect();
