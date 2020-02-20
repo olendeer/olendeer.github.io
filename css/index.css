@@ -3,7 +3,8 @@ html {
   scroll-behavior: smooth; }
 
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  visibility: hidden; }
 
 a {
   text-decoration: none;
@@ -719,7 +720,7 @@ footer {
     .logo-footer .regulation a {
       font-family: "Montserrat";
       color: white;
-      font-size: 0.5rem;
+      font-size: 0.58rem;
       text-decoration: underline;
       opacity: .8;
       font-weight: 500;
@@ -887,7 +888,13 @@ footer {
   section {
     padding: 65px 0; }
   .content_first_page, .second_page > *, .acq {
-    margin-left: 16.6145%; }
+    margin-left: auto; }
+  .content_first_page {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .illust_first_page {
+    margin-left: 160px; }
   .header-main {
     min-width: 432px;
     margin-left: 8.9375%;
@@ -907,12 +914,12 @@ footer {
     margin-bottom: 65px; }
   .advan-btns {
     margin-top: 10px; }
-  .main-footer {
+  .main-footer ul {
     min-width: 432px; }
   .illust_third_page1 {
-    -webkit-transform: translate(-10.447vw, 7.888vh);
-    -ms-transform: translate(-10.447vw, 7.888vh);
-    transform: translate(-10.447vw, 7.888vh); }
+    -webkit-transform: translate(-13.447vw, 7.888vh);
+    -ms-transform: translate(-13.447vw, 7.888vh);
+    transform: translate(-13.447vw, 7.888vh); }
   .illust_third_page2 {
     -webkit-transform: translate(66.2291vw, 3.5935vh);
     -ms-transform: translate(66.2291vw, 3.5935vh);
@@ -928,17 +935,29 @@ footer {
 
 @media screen and (max-width: 1600px) {
   .illust_third_page1 {
-    -webkit-transform: translate(-12.447vw, 7.888vh);
-    -ms-transform: translate(-12.447vw, 7.888vh);
-    transform: translate(-12.447vw, 7.888vh); } }
+    -webkit-transform: translate(-15.447vw, 7.888vh);
+    -ms-transform: translate(-15.447vw, 7.888vh);
+    transform: translate(-15.447vw, 7.888vh); } }
 
-@media screen and (min-width: 1200px) and (max-width: 1440px) and (min-height: 730px) {
+@media screen and (max-width: 1536px) {
+  .illust_third_page1 {
+    -webkit-transform: translate(-17.447vw, 7.888vh);
+    -ms-transform: translate(-17.447vw, 7.888vh);
+    transform: translate(-17.447vw, 7.888vh); }
+  .footer-btns {
+    margin-right: 5.0353%; } }
+
+@media screen and (max-width: 1440px) {
   html {
     font-size: 15px; }
   section {
     padding: 40px 0; }
   header {
     width: 89.062%; }
+  .content_first_page {
+    -webkit-box-pack: unset;
+    -ms-flex-pack: unset;
+    justify-content: unset; }
   .header-main {
     min-width: 360px;
     margin-left: 10.9375%;
@@ -1040,8 +1059,8 @@ footer {
         height: 52.5px;
         border: 2.25px solid #950abe; }
         .acq .acq-btns a svg {
-          width: 11.5px;
-          height: 7.5px;
+          width: 17.5px;
+          height: 13.5px;
           -webkit-transform: translatex(18.75px);
           -ms-transform: translatex(18.75px);
           transform: translatex(18.75px); }
@@ -1068,7 +1087,7 @@ footer {
   .logo-footer {
     padding-top: 17.25px;
     margin-right: 7.9416%;
-    min-width: 137.39px; }
+    min-width: 150px; }
     .logo-footer a {
       margin-bottom: 13.5px; }
     .logo-footer .regulation a:not(:last-child) {
@@ -1095,3 +1114,41 @@ footer {
 @media screen and (max-width: 1440px) and (min-height: 900px) {
   .third_page {
     padding-top: 260px; } }
+
+@media screen and (max-width: 1280px) {
+  .header-main {
+    margin-left: 8.9375%;
+    margin-right: 10.583%; }
+  .footer-btns {
+    margin-left: 4.0528%; }
+  .illust_third_page1 {
+    -webkit-transform: translate(-10.447vw, 5.888vh);
+    -ms-transform: translate(-10.447vw, 5.888vh);
+    transform: translate(-10.447vw, 5.888vh); } }
+
+@media screen and (max-width: 1156px) {
+  .header-main {
+    margin-left: 2.9375%;
+    margin-right: 4.583%; }
+  .illust_third_page1 {
+    -webkit-transform: translate(-13.447vw, 5.888vh);
+    -ms-transform: translate(-13.447vw, 5.888vh);
+    transform: translate(-13.447vw, 5.888vh); }
+  .logo-footer {
+    margin-right: 3.9416%; }
+  .footer-btns {
+    margin-left: 2.0528%; } }
+
+@media screen and (max-height: 730px) {
+  .acq {
+    margin-bottom: 23.7037vh; } }
+
+@media screen and (max-height: 700px) {
+  .next-btn {
+    margin-top: 9.9629vh; }
+  .description {
+    min-height: 310px; }
+  .acq {
+    margin-bottom: 21.7037vh; }
+  section {
+    padding: 35px 0; } }

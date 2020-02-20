@@ -1,5 +1,28 @@
-$(document).ready(function() {
-    new WOW().init();
+window.onload = function(){
+    var body = document.querySelector('body');
+    body.style.visibility = 'visible';
+    leftMargin();
+}
+window.onresize = leftMargin;
+
+
+function leftMargin(){
+    var width = window.innerWidth;
+    if(width >= 1440 && width <= 1680 || width >= 1024 && width <= 1280)
+    {
+        var content = document.querySelector('.description');
+        var coordinateX = content.getBoundingClientRect();
+        var left = coordinateX.left;
+        content = document.querySelectorAll('.second_page > *, .acq');
+        for(var i = 0; i < content.length; i++)
+        {
+            var block = content[i];
+            block.style.marginLeft = left + 'px';
+        }
+    }
+}
+// $(document).ready(function() {
+//     new WOW().init();
     // $('.name > h1, .p > .span1').css({
     //     'opacity' : '1'
     // });
@@ -140,7 +163,7 @@ $(document).ready(function() {
     // var parallaxInstance = new Parallax(sceneSecondSection);
     // var sceneThirdSection = $('#sceneThirdSection').get(0);
     // var parallaxInstance = new Parallax(sceneThirdSection);
-});
+// });
 // var user = detect.parse(navigator.userAgent);
 // if(user.browser.family == 'Other') 
 // {
