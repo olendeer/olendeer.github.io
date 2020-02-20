@@ -391,7 +391,11 @@ header{
 		}
 	}
 }
-
+.second_page{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .second_page > *{
 	margin-left: 21.6145%;
 }
@@ -403,16 +407,22 @@ header{
 	display: -o-flex;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
 	width: 1090px;
 	height: 130px;
-	margin-bottom: 80px;
-	background: linear-gradient(to right,$colorBlue, #4d84f0);
+	margin-bottom: 25px;
+	background: linear-gradient(to right, $colorViolet, $colorBlue, #4d84f0);
+	background-size: 2180px 130px;
+	background-position: -1090px;
 	border-radius: 100px;
 	box-sizing: border-box;
-	padding-left: 310px;
-	padding-top: 20px;
-	padding-bottom: 28px;
+	min-width: 150px;
+	padding-left: 75px;
+	transition-duration: .3s;
+	&:hover{
+		transition-duration: .3s;
+		background-position: 0px;
+	}
 	img{
 		display: none;
 		position: absolute;
@@ -420,8 +430,18 @@ header{
 		width: 280px;
 		height: 200px;
 	}
+	span{
+		font-family: "Montserrat";
+		font-size: 3.5rem;
+		color: white;
+		opacity: .2;
+		margin-right: 100px;
+		min-width: 150px;
+		// transform: rotate(90deg) translate(5px, 15px);
+		font-weight: 900;
+	}
 	p{
-		width: 86.8%;
+		width: 62.844%;
 		min-width: 677px;
 		font-family: "Montserrat";
 		font-size: 1rem;
@@ -429,18 +449,10 @@ header{
 		color: white;
 		opacity: .9;
 	}
-	span{
-		font-family: "Montserrat";
-		font-size: 1.5rem;
-		color: white;
-		opacity: .4;
-		transform: rotate(90deg) translate(5px, 15px);
-		font-weight: 800;
-	}
 }
 .advan-btns{
 	display: flex;
-	margin-top: 90px;
+	margin-top: 65px;
 	a{
 		@include buttonViolet(220px, 70px);
 		font-size: 0.9rem;
@@ -769,9 +781,6 @@ footer{
 		flex-direction: column;
 		justify-content: center;
 	}
-	.advan{
-		margin-bottom: 65px;
-	}
 	.advan-btns{
 		margin-top: 10px;
 	}
@@ -926,15 +935,26 @@ footer{
 	.advan{
 		width: 817.5px;
 		height: 97.5px;
-		padding-left: 232.5px;
-		padding-top: 25px;
-		margin-bottom: 50px;
+		padding-left: 56.25px;
+		margin-bottom: 15px;
+		background: linear-gradient(to right, $colorViolet, $colorBlue, #4d84f0);
+		background-size: 1635px 97.5px;
+		background-position: -817.5px;
+		&:hover{
+			transition-duration: .3s;
+			background-position: 0px;
+		}
+		span{
+			min-width: 110px;
+			margin-right: 75px;
+		}
 		p{
-			min-width: 500.25px;
+			width: 67%;
+   			min-width: unset;
 		}
 	}
 	.advan-btns{
-		margin-top: 7.5px;
+		margin-top: 20px;
 		a{
 			width: 165px;
 			height: 52.5px;
