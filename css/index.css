@@ -1277,11 +1277,32 @@ footer {
   .third_page > .fp-tableCell {
     padding-top: 100px; }
   .acq {
-    margin-bottom: 21.7037vh; }
+    margin-bottom: 21.7037vh; } }
+
+@media screen and (min-width: 1800px) and (max-width: 1920px) and (min-height: 900px) and (max-height: 1000px) {
+  .fp-tableCell {
+    padding: 65px 0; }
+  .advan:hover img {
+    -webkit-transform: translatex(-2.5vw) translatey(-37px);
+    -ms-transform: translatex(-2.5vw) translatey(-37px);
+    transform: translatex(-2.5vw) translatey(-37px); }
+  .advan img {
+    height: 210px;
+    -webkit-transform: translatex(-50vw) translatey(-45px);
+    -ms-transform: translatex(-50vw) translatey(-45px);
+    transform: translatex(-50vw) translatey(-45px); }
+  .advan-btns {
+    margin-top: 25px; }
   .advan-btns {
     margin-top: 10px; }
   .fp-tableCell {
-    padding: 35px 0; } }
+    padding: 35px 0; }
+  #sceneFirstSection .sceneFPEllipse2 {
+    margin-top: 1vh; }
+  #sceneFirstSection .sceneFPEllipse3 {
+    margin-top: -15vh; }
+  #sceneFirstSection .sceneFPEllipse4 {
+    margin-top: 13vh; } }
 
 @media screen and (min-width: 1440px) and (min-height: 600px) and (max-height: 700px) {
   .next-btn {
