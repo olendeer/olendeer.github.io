@@ -109,9 +109,65 @@ function leftMargin(){
         autoScrolling: true,
         scrollingSpeed: 450,
         loopBottom: true,
-        // afterRender: function(){
+        //afterRender: function(){
         //     new WOW().init();
         // }
+        onLeave: function(origin, destination, direction){
+            var leavingSection = this;
+            var background = document.querySelectorAll('.sceneFPEllipse, .sceneFPPol1, .sceneFPPol2, .sceneFPPol3, .sceneFPEllipse2, .sceneFPEllipse3, .sceneFPEllipse4, .sceneFPTrifle1, .sceneFPTrifle2, .sceneFPTrifle3, .sceneFPTring1, .sceneFPTring2, .sceneFPGroup1');
+            var place = 0;
+            if(destination.index == 0){
+                place = ['-4%', '0%', '6%', '6%', '54%', '46%', '61%','68%', '55%', '85%', '-10%', '-10%', '110%'];
+                for(var i = 0; i < background.length; i++)
+                {
+                    background[i].style.marginLeft = place[i];
+                }
+                background[0].style.marginTop = '10vh';
+                background[1].style.marginTop = '41vh';
+                background[2].style.marginTop = '34vh';
+                background[3].style.marginTop = '54vh';
+                background[4].style.marginTop = '11vh';
+                background[5].style.marginTop = '-2vh';
+                background[5].style.opacity = '1';
+                background[7].style.opacity = '1';
+                background[8].style.opacity = '1';
+                background[9].style.opacity = '1';
+            }
+            else if(destination.index == 1){
+                place = ['2%', '6%', '12%', '12%', '57%', '73%', '65%','68%', '55%', '85%', '7%', '12%', '60%'];
+                for(var i = 0; i < background.length; i++)
+                {
+                    background[i].style.marginLeft = place[i];
+                }
+                background[0].style.marginTop = '35vh';
+                background[1].style.marginTop = '60vh';
+                background[2].style.marginTop = '73vh';
+                background[3].style.marginTop = '57vh';
+                background[4].style.marginTop = '11vh';
+                background[5].style.opacity = '0';
+                background[7].style.opacity = '0';
+                background[8].style.opacity = '0';
+                background[9].style.opacity = '0';
+
+            }
+            else if(destination.index == 2){
+                place = ['2%', '-30%', '-30%', '-30%', '57%', '49%', '-10%','68%', '55%', '85%', '-30%', '-30%', '60%'];
+                for(var i = 0; i < background.length; i++)
+                {
+                    background[i].style.marginLeft = place[i];
+                }
+                background[0].style.marginTop = '10vh';
+                background[1].style.marginTop = '60vh';
+                background[2].style.marginTop = '73vh';
+                background[3].style.marginTop = '57vh';
+                background[4].style.marginTop = '5vh';
+                background[5].style.marginTop = '-10vh';
+                background[5].style.opacity = '1';
+                background[7].style.opacity = '0';
+                background[8].style.opacity = '0';
+                background[9].style.opacity = '0';
+            }
+        }
     });
     // $.fn.fullpage.setAllowScrolling(true);
     // function slowScroll(id) { 
