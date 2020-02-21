@@ -420,6 +420,7 @@ header{
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
+	position: relative;
 	width: 1090px;
 	height: 130px;
 	margin-bottom: 25px;
@@ -431,7 +432,6 @@ header{
 	min-width: 150px;
 	padding-left: 75px;
 	transition-duration: .3s;
-	perspective: 500px;
 	&:hover{
 		transition-duration: .3s;
 		background-position: 0px;
@@ -439,19 +439,35 @@ header{
 			opacity: 0;
 			transition-duration: .3s;
 		}
-		img{
-			transform: translatex(-2.2vw) translatey(-48px) rotatez(0deg) rotatex(0deg) rotatex(0deg);
-			opacity: 1;
+		.wrap_advan_img{
+			height: 230px;
 			transition-duration: .3s;
+			img{
+				transform: translatey(1%) rotatey(0deg);
+				opacity: 1;
+				transition-duration: .8s;
+			}
 		}
 	}
-	img{
-		opacity: 0;
+	.wrap_advan_img{
+		align-self: flex-end;
+		width: 310px;
+		height: 130px;
 		position: absolute;
-		transform: translatex(-50vw) translatey(-48px) rotatez(15deg) rotatex(30deg) rotatex(30deg); 
- 		width: 280px;
-		height: 230px;
-		transition-duration: .3s;
+		bottom: 0;
+		transform: translatex(-18%);
+		overflow: hidden;
+		transition-duration: .4s;
+		perspective: 300px;
+		display: flex;
+		justify-content: center;
+		img{
+			opacity: 0;
+	 		width: 280px;
+			height: 230px;
+			transition-duration: .8s;
+			transform: translatey(20%) rotatex(-40deg);
+		}
 	}
 	span{
 		font-family: "Montserrat";
@@ -1047,19 +1063,23 @@ footer{
 		&:hover{
 			transition-duration: .3s;
 			background-position: 0px;
-			img{
-				transform: translatex(-2.5vw) translatey(-30px);
+			.wrap_advan_img{
+				height: 160px;
 			}
 		}
 		span{
 			min-width: 110px;
 			margin-right: 75px;
 		}
-		img{
-			width: 210px;
-			height: 160px;
-			transform: translatex(-50vw) translatey(-30px);
+		.wrap_advan_img{
+			height: 97.5px;
+			transform: translatex(-25%);
+			img{
+				width: 210px;
+				height: 160px;
+			}
 		}
+
 		p{
 			width: 67%;
    			min-width: unset;

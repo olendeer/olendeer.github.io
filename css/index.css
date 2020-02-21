@@ -459,6 +459,7 @@ header {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  position: relative;
   width: 1090px;
   height: 130px;
   margin-bottom: 25px;
@@ -475,9 +476,7 @@ header {
   padding-left: 75px;
   -webkit-transition-duration: .3s;
   -o-transition-duration: .3s;
-  transition-duration: .3s;
-  -webkit-perspective: 500px;
-  perspective: 500px; }
+  transition-duration: .3s; }
   .advan:hover {
     -webkit-transition-duration: .3s;
     -o-transition-duration: .3s;
@@ -488,25 +487,51 @@ header {
       -webkit-transition-duration: .3s;
       -o-transition-duration: .3s;
       transition-duration: .3s; }
-    .advan:hover img {
-      -webkit-transform: translatex(-2.2vw) translatey(-48px) rotatez(0deg) rotatex(0deg) rotatex(0deg);
-      -ms-transform: translatex(-2.2vw) translatey(-48px) rotate(0deg) rotatex(0deg) rotatex(0deg);
-      transform: translatex(-2.2vw) translatey(-48px) rotatez(0deg) rotatex(0deg) rotatex(0deg);
-      opacity: 1;
+    .advan:hover .wrap_advan_img {
+      height: 230px;
       -webkit-transition-duration: .3s;
       -o-transition-duration: .3s;
       transition-duration: .3s; }
-  .advan img {
-    opacity: 0;
+      .advan:hover .wrap_advan_img img {
+        -webkit-transform: translatey(1%) rotatey(0deg);
+        -ms-transform: translatey(1%) rotatey(0deg);
+        transform: translatey(1%) rotatey(0deg);
+        opacity: 1;
+        -webkit-transition-duration: .8s;
+        -o-transition-duration: .8s;
+        transition-duration: .8s; }
+  .advan .wrap_advan_img {
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    width: 310px;
+    height: 130px;
     position: absolute;
-    -webkit-transform: translatex(-50vw) translatey(-48px) rotatez(15deg) rotatex(30deg) rotatex(30deg);
-    -ms-transform: translatex(-50vw) translatey(-48px) rotate(15deg) rotatex(30deg) rotatex(30deg);
-    transform: translatex(-50vw) translatey(-48px) rotatez(15deg) rotatex(30deg) rotatex(30deg);
-    width: 280px;
-    height: 230px;
-    -webkit-transition-duration: .3s;
-    -o-transition-duration: .3s;
-    transition-duration: .3s; }
+    bottom: 0;
+    -webkit-transform: translatex(-18%);
+    -ms-transform: translatex(-18%);
+    transform: translatex(-18%);
+    overflow: hidden;
+    -webkit-transition-duration: .4s;
+    -o-transition-duration: .4s;
+    transition-duration: .4s;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .advan .wrap_advan_img img {
+      opacity: 0;
+      width: 280px;
+      height: 230px;
+      -webkit-transition-duration: .8s;
+      -o-transition-duration: .8s;
+      transition-duration: .8s;
+      -webkit-transform: translatey(20%) rotatex(-40deg);
+      -ms-transform: translatey(20%) rotatex(-40deg);
+      transform: translatey(20%) rotatex(-40deg); }
   .advan span {
     font-family: "Montserrat";
     font-size: 3.5rem;
@@ -1142,19 +1167,19 @@ footer {
       -o-transition-duration: .3s;
       transition-duration: .3s;
       background-position: 0px; }
-      .advan:hover img {
-        -webkit-transform: translatex(-2.5vw) translatey(-30px);
-        -ms-transform: translatex(-2.5vw) translatey(-30px);
-        transform: translatex(-2.5vw) translatey(-30px); }
+      .advan:hover .wrap_advan_img {
+        height: 160px; }
     .advan span {
       min-width: 110px;
       margin-right: 75px; }
-    .advan img {
-      width: 210px;
-      height: 160px;
-      -webkit-transform: translatex(-50vw) translatey(-30px);
-      -ms-transform: translatex(-50vw) translatey(-30px);
-      transform: translatex(-50vw) translatey(-30px); }
+    .advan .wrap_advan_img {
+      height: 97.5px;
+      -webkit-transform: translatex(-25%);
+      -ms-transform: translatex(-25%);
+      transform: translatex(-25%); }
+      .advan .wrap_advan_img img {
+        width: 210px;
+        height: 160px; }
     .advan p {
       width: 67%;
       min-width: unset; }
