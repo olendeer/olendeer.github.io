@@ -1,7 +1,10 @@
 window.onload = function(){
+    // new WOW().init();
     var body = document.querySelector('body');
     body.style.visibility = 'visible';
     leftMargin();
+    var sceneFirstSection = $('#sceneFirstSection').get(0);
+    var parallaxInstance = new Parallax(sceneFirstSection);
 }
 window.onresize = leftMargin;
 
@@ -13,7 +16,7 @@ function leftMargin(){
         var content = document.querySelector('.description');
         var coordinateX = content.getBoundingClientRect();
         var left = coordinateX.left;
-        content = document.querySelectorAll('.second_page > *, .acq');
+        content = document.querySelectorAll('.second_page > .fp-tableCell > *, .acq');
         for(var i = 0; i < content.length; i++)
         {
             var block = content[i];
@@ -100,15 +103,16 @@ function leftMargin(){
     // $('.save').delay(850).animate({
     //     opacity : 1
     // },300);
-    // $('#fullpage').fullpage({
-    //     // anchors:['first_page', 'second_page', 'thirdPage'],
-    //     scrollBar: true,
-    //     // scrollingSpeed: 450,
-    //     // loopBottom: true,
-    //     // afterRender: function(){
-    //     //     new WOW().init();
-    //     // }
-    // });
+    $('#fullpage').fullpage({
+        anchors:['first_page', 'second_page', 'third_page'],
+        scrollBar: false,
+        autoScrolling: true,
+        scrollingSpeed: 450,
+        loopBottom: true,
+        // afterRender: function(){
+        //     new WOW().init();
+        // }
+    });
     // $.fn.fullpage.setAllowScrolling(true);
     // function slowScroll(id) { 
     //     var offset = 0;
