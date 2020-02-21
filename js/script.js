@@ -126,8 +126,8 @@ function leftMargin(){
                 background[1].style.marginTop = '41vh';
                 background[2].style.marginTop = '34vh';
                 background[3].style.marginTop = '54vh';
-                background[4].style.marginTop = '11vh';
-                background[5].style.marginTop = '-2vh';
+                // background[4].style.marginTop = '11vh';
+                // background[5].style.marginTop = '-2vh';
                 background[5].style.opacity = '1';
                 background[7].style.opacity = '1';
                 background[8].style.opacity = '1';
@@ -143,7 +143,7 @@ function leftMargin(){
                 background[1].style.marginTop = '60vh';
                 background[2].style.marginTop = '73vh';
                 background[3].style.marginTop = '57vh';
-                background[4].style.marginTop = '11vh';
+                // background[4].style.marginTop = '11vh';
                 background[5].style.opacity = '0';
                 background[7].style.opacity = '0';
                 background[8].style.opacity = '0';
@@ -160,8 +160,8 @@ function leftMargin(){
                 background[1].style.marginTop = '60vh';
                 background[2].style.marginTop = '73vh';
                 background[3].style.marginTop = '57vh';
-                background[4].style.marginTop = '5vh';
-                background[5].style.marginTop = '-10vh';
+                // background[4].style.marginTop = '5vh';
+                // background[5].style.marginTop = '-10vh';
                 background[5].style.opacity = '1';
                 background[7].style.opacity = '0';
                 background[8].style.opacity = '0';
