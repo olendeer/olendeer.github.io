@@ -935,97 +935,58 @@ footer {
   #sceneFirstSection .sceneFPEllipse {
     margin-top: 10vh;
     margin-left: -4%;
-    width: 8vw;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    width: 8vw; }
   #sceneFirstSection .sceneFPPol1 {
     margin-top: 41vh;
     margin-left: 0%;
-    width: 9vw;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    width: 9vw; }
   #sceneFirstSection .sceneFPPol2 {
     margin-top: 34vh;
     margin-left: 6%;
-    width: 6vw;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    width: 6vw; }
   #sceneFirstSection .sceneFPPol3 {
     margin-top: 54vh;
     margin-left: 6%;
-    width: 4vw;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    width: 4vw; }
   #sceneFirstSection .sceneFPEllipse2 {
     margin-top: 11vh;
     margin-left: 54%;
     width: 47vw;
-    z-index: -3;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    z-index: -3; }
   #sceneFirstSection .sceneFPEllipse3 {
     margin-top: -2vh;
     margin-left: 46%;
     width: 62vw;
-    z-index: -3;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    z-index: -3; }
   #sceneFirstSection .sceneFPEllipse4 {
     margin-top: 25vh;
     margin-left: 61%;
     width: 33vw;
-    z-index: -3;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    z-index: -3; }
   #sceneFirstSection .sceneFPTrifle1 {
     z-index: 0;
     margin-top: 30vh;
     margin-left: 68%;
-    width: 3vw;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    width: 3vw; }
   #sceneFirstSection .sceneFPTrifle2 {
     z-index: 0;
     margin-top: 72vh;
     margin-left: 55%;
-    width: 3vw;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    width: 3vw; }
   #sceneFirstSection .sceneFPTrifle3 {
     z-index: 0;
     margin-top: 75vh;
     margin-left: 85%;
-    width: 3vw;
-    -webkit-transition-duration: .7s;
-    -o-transition-duration: .7s;
-    transition-duration: .7s; }
+    width: 3vw; }
   #sceneFirstSection .sceneFPTring1 {
-    -webkit-transition-duration: 1s;
-    -o-transition-duration: 1s;
-    transition-duration: 1s;
     margin-top: 10vh;
     margin-left: -10%;
     width: 10vw; }
   #sceneFirstSection .sceneFPTring2 {
-    -webkit-transition-duration: .5s;
-    -o-transition-duration: .5s;
-    transition-duration: .5s;
     margin-top: 20vh;
     margin-left: -10%;
     width: 6vw; }
   #sceneFirstSection .sceneFPGroup1 {
-    -webkit-transition-duration: 1s;
-    -o-transition-duration: 1s;
-    transition-duration: 1s;
     margin-top: 6vh;
     margin-left: 110%;
     width: 5vw; }
