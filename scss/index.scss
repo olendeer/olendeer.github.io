@@ -405,7 +405,6 @@ header{
 		}
 	}
 }
-
 .advan{
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -426,6 +425,24 @@ header{
 	min-width: 150px;
 	padding-left: 75px;
 	transition-duration: .3s;
+	opacity: 0;
+	&:nth-child(1){
+		transform: translatex(-30%);
+		transition-duration: .5s;
+	}
+	&:nth-child(2){
+		transform: translatex(30%);
+		transition-duration: .6s;
+	}
+	&:nth-child(3){
+		transform: translatex(-35%);
+		transition-duration: .7s;
+	}
+	&:nth-child(4){
+		transform: translatex(35%);
+		transition-duration: .8s;
+	}
+
 	&:hover{
 		transition-duration: .3s;
 		background-position: 0px;
@@ -483,6 +500,13 @@ header{
 		opacity: .9;
 	}
 }
+@for $i from 1 through 4{
+	.comeback_advan:nth-child(#{$i}){
+		transform: translatex(0px);
+		opacity: 1;
+	}
+}
+
 .advan-btns{
 	display: flex;
 	margin-top: 65px;

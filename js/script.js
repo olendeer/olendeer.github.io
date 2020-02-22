@@ -1,5 +1,4 @@
 window.onload = function(){
-    // new WOW().init();
     var body = document.querySelector('body');
     body.style.visibility = 'visible';
     var sceneFirstSection = $('#sceneFirstSection').get(0);
@@ -104,6 +103,7 @@ function leftMargin(){
     //     opacity : 1
     // },300);
     var background = document.querySelectorAll('#sceneFirstSection > *');
+    var advan = document.querySelectorAll('.advan');
     var place = 0;
     $('#fullpage').fullpage({
         anchors:['first_page', 'second_page', 'third_page'],
@@ -111,11 +111,11 @@ function leftMargin(){
         autoScrolling: true,
         scrollingSpeed: 450,
         loopBottom: true,
-        //afterRender: function(){
-        //     new WOW().init();
-        // }
         onLeave: function(origin, destination, direction){
             if(destination.index == 0){
+                for(var i = 0; i < 4; i++){
+                    advan[i].classList.remove('comeback_advan');
+                }
                 place = ['-4%', '0%', '6%', '6%', '54%', '46%', '61%','68%', '55%', '85%', '-20%', '-20%', '120%'];
                 for(var i = 0; i < background.length; i++)
                 {
@@ -138,6 +138,9 @@ function leftMargin(){
                 },500);
             }
             else if(destination.index == 1){
+                for(var i = 0; i < 4; i++){
+                    advan[i].classList.add('comeback_advan');
+                }
                 place = ['2%', '6%', '12%', '12%', '57%', '73%', '65%','68%', '55%', '85%', '7%', '12%', '60%'];
                 for(var i = 0; i < background.length; i++)
                 {
