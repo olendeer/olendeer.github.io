@@ -29,37 +29,20 @@ html{
 }
 
 body{
-	// overflow-x: hidden;
 	visibility: hidden;
 }
 
 a{
 	text-decoration: none;
-	/*color: inherit;*/
 }
-/*a:visited{
-	color: inherit;
-}*/
 #fullpage{
-	// width: 100vw;
-	// overflow-x: hidden;
 }
-// section{
-// 	width: $widthSection;
-// 	height: $heightSection;
-// 	box-sizing: border-box;
-// 	padding: 80px 0;
-// }
 .fp-tableCell{
 	width: $widthSection;
 	height: $heightSection;
 	box-sizing: border-box;
 	padding: 80px 0;
 }
-
-// .third_page{
-// 	background-color: green;
-// }
 header{
 	width: $HFWidth;
 	margin: 0 auto;
@@ -410,6 +393,13 @@ header{
 }
 .second_page > .fp-tableCell > *{
 	margin-left: 21.6145%;
+}
+@for $i from 1 through 4{
+	.second_page > .fp-tableCell > *{
+		&:nth-child($i){
+			transform: translatex(100px*$i);
+		}
+	}
 }
 
 .advan{

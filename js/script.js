@@ -2,9 +2,9 @@ window.onload = function(){
     // new WOW().init();
     var body = document.querySelector('body');
     body.style.visibility = 'visible';
-    leftMargin();
     var sceneFirstSection = $('#sceneFirstSection').get(0);
     var parallaxInstance = new Parallax(sceneFirstSection);
+    leftMargin();
 }
 window.onresize = leftMargin;
 
@@ -103,7 +103,6 @@ function leftMargin(){
     // $('.save').delay(850).animate({
     //     opacity : 1
     // },300);
-    // var background = document.querySelectorAll('.sceneFPEllipse, .sceneFPPol1, .sceneFPPol2, .sceneFPPol3, .sceneFPEllipse2, .sceneFPEllipse3, .sceneFPEllipse4, .sceneFPTrifle1, .sceneFPTrifle2, .sceneFPTrifle3, .sceneFPTring1, .sceneFPTring2, .sceneFPGroup1');
     var background = document.querySelectorAll('#sceneFirstSection > *');
     var place = 0;
     $('#fullpage').fullpage({
@@ -117,7 +116,7 @@ function leftMargin(){
         // }
         onLeave: function(origin, destination, direction){
             if(destination.index == 0){
-                place = ['-4%', '0%', '6%', '6%', '54%', '46%', '61%','68%', '55%', '85%', '-10%', '-10%', '110%'];
+                place = ['-4%', '0%', '6%', '6%', '54%', '46%', '61%','68%', '55%', '85%', '-20%', '-20%', '120%'];
                 for(var i = 0; i < background.length; i++)
                 {
                     background[i].classList.add('transition');
@@ -127,8 +126,6 @@ function leftMargin(){
                 background[1].style.marginTop = '41vh';
                 background[2].style.marginTop = '34vh';
                 background[3].style.marginTop = '54vh';
-                // background[4].style.marginTop = '11vh';
-                // background[5].style.marginTop = '-2vh';
                 background[5].style.opacity = '1';
                 background[7].style.opacity = '1';
                 background[8].style.opacity = '1';
@@ -139,10 +136,6 @@ function leftMargin(){
                        background[i].classList.remove('transition');
                     }
                 },400);
-                // for(var i = 0; i < background.length; i++)
-                // {
-                //     background[i].classList.remove('transition');
-                // }
             }
             else if(destination.index == 1){
                 place = ['2%', '6%', '12%', '12%', '57%', '73%', '65%','68%', '55%', '85%', '7%', '12%', '60%'];
@@ -155,7 +148,6 @@ function leftMargin(){
                 background[1].style.marginTop = '60vh';
                 background[2].style.marginTop = '73vh';
                 background[3].style.marginTop = '57vh';
-                // background[4].style.marginTop = '11vh';
                 background[5].style.opacity = '0';
                 background[7].style.opacity = '0';
                 background[8].style.opacity = '0';
@@ -178,8 +170,6 @@ function leftMargin(){
                 background[1].style.marginTop = '60vh';
                 background[2].style.marginTop = '73vh';
                 background[3].style.marginTop = '57vh';
-                // background[4].style.marginTop = '5vh';
-                // background[5].style.marginTop = '-10vh';
                 background[5].style.opacity = '1';
                 background[7].style.opacity = '0';
                 background[8].style.opacity = '0';

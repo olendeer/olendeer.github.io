@@ -6,12 +6,8 @@ body {
   visibility: hidden; }
 
 a {
-  text-decoration: none;
-  /*color: inherit;*/ }
+  text-decoration: none; }
 
-/*a:visited{
-	color: inherit;
-}*/
 .fp-tableCell {
   width: 100vw;
   height: 100vh;
@@ -443,6 +439,26 @@ header {
 
 .second_page > .fp-tableCell > * {
   margin-left: 21.6145%; }
+
+.second_page > .fp-tableCell > *:nth-child($i) {
+  -webkit-transform: translatex(100px);
+  -ms-transform: translatex(100px);
+  transform: translatex(100px); }
+
+.second_page > .fp-tableCell > *:nth-child($i) {
+  -webkit-transform: translatex(200px);
+  -ms-transform: translatex(200px);
+  transform: translatex(200px); }
+
+.second_page > .fp-tableCell > *:nth-child($i) {
+  -webkit-transform: translatex(300px);
+  -ms-transform: translatex(300px);
+  transform: translatex(300px); }
+
+.second_page > .fp-tableCell > *:nth-child($i) {
+  -webkit-transform: translatex(400px);
+  -ms-transform: translatex(400px);
+  transform: translatex(400px); }
 
 .advan {
   display: -webkit-flex;
