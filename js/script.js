@@ -103,7 +103,8 @@ function leftMargin(){
     // $('.save').delay(850).animate({
     //     opacity : 1
     // },300);
-    var background = document.querySelectorAll('.sceneFPEllipse, .sceneFPPol1, .sceneFPPol2, .sceneFPPol3, .sceneFPEllipse2, .sceneFPEllipse3, .sceneFPEllipse4, .sceneFPTrifle1, .sceneFPTrifle2, .sceneFPTrifle3, .sceneFPTring1, .sceneFPTring2, .sceneFPGroup1');
+    // var background = document.querySelectorAll('.sceneFPEllipse, .sceneFPPol1, .sceneFPPol2, .sceneFPPol3, .sceneFPEllipse2, .sceneFPEllipse3, .sceneFPEllipse4, .sceneFPTrifle1, .sceneFPTrifle2, .sceneFPTrifle3, .sceneFPTring1, .sceneFPTring2, .sceneFPGroup1');
+    var background = document.querySelectorAll('#sceneFirstSection > *');
     var place = 0;
     $('#fullpage').fullpage({
         anchors:['first_page', 'second_page', 'third_page'],
