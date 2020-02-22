@@ -135,7 +135,7 @@ function leftMargin(){
                     {
                        background[i].classList.remove('transition');
                     }
-                },400);
+                },500);
             }
             else if(destination.index == 1){
                 place = ['2%', '6%', '12%', '12%', '57%', '73%', '65%','68%', '55%', '85%', '7%', '12%', '60%'];
@@ -157,7 +157,7 @@ function leftMargin(){
                     {
                        background[i].classList.remove('transition');
                     }
-                },400)
+                },500)
             }
             else if(destination.index == 2){
                 place = ['2%', '-30%', '-30%', '-30%', '57%', '49%', '-10%','68%', '55%', '85%', '-30%', '-30%', '60%'];
@@ -179,7 +179,7 @@ function leftMargin(){
                     {
                        background[i].classList.remove('transition');
                     }
-                },400)
+                },500)
             }
         }
     });

@@ -27,7 +27,9 @@ html{
 	font-size: 20px;
 	scroll-behavior: smooth;
 }
-
+*{
+	backface-visibility: hidden;
+}
 body{
 	visibility: hidden;
 }
@@ -76,7 +78,6 @@ header{
 	display: flex;
 	justify-content: space-between;
 	min-width: 480px;
-	transform: translatey(6px);
 	margin-left: 280px;
 	margin-right: 210px;
 	li{
@@ -88,18 +89,22 @@ header{
 			display: flex;
 			flex-direction: column;
 			span{
+				position: relative;
 				transition-duration: .3s;
 				font-family: "Montserrat";
 				font-size: 0.75rem;
 				color: black;
-			}
-			div{
-				margin: 0 auto;
-				width: 0%;
-				height: 2px;
-				background-color: $colorBlue;
-				margin-top: 8px;
-				transition-duration: .3s;
+				&::after{
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 25%;
+					width: 50%;
+					height: 1px;
+					background-color: $colorBlue;
+					transition-duration: .3s;
+					transform: translatey(8px) scalex(0);
+				}
 			}
 		}
 		&:hover{
@@ -107,10 +112,9 @@ header{
 				span{
 					transition-duration: .3s;
 					color: $colorBlue;
-				}
-				div{
-					transition-duration: .3s;
-					width: 50%;
+					&::after{
+						transform: translatey(8px) scalex(1);
+					}
 				}
 			}
 		}
@@ -119,9 +123,9 @@ header{
 		a{
 			span{
 				color: $colorBlue;
-			}
-			div{
-				width: 50%;
+				&::after{
+					transform: translatey(8px) scalex(1);
+				}
 			}
 		}
 	}
@@ -662,7 +666,7 @@ footer{
 	display: -o-flex;
 	display: flex;
 	min-width: 480px;
-	transform: translatey(6px);
+
 	justify-content: space-between;
 	li{
 		a{
@@ -673,29 +677,32 @@ footer{
 			display: flex;
 			flex-direction: column;
 			span{
+				position: relative;
 				font-family: "Montserrat";
 				font-size: 0.75rem;
 				color: white;
 				opacity: .6;
 				transition-duration: .3s;
-			}
-			div{
-				margin: 0 auto;
-				width: 0%;
-				height: 2px;
-				background-color: white;
-				margin-top: 8px;
-				transition-duration: .3s;
+				&::after{
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 25%;
+					width: 50%;
+					height: 1px;
+					background-color: white;
+					transition-duration: .3s;
+					transform: translatey(8px) scalex(0);
+				}
 			}
 		}
 		&:hover > a{
 			span{
 				opacity: 1;
 				transition-duration: .3s;
-			}
-			div{
-				width: 50%;
-				transition-duration: .3s;
+				&::after{
+					transform: translatey(8px) scalex(1);
+				}
 			}
 		}
 	}
@@ -703,9 +710,9 @@ footer{
 		a{
 			span{
 				opacity: 1;
-			}
-			div{
-				width: 50%;
+				&::after{
+					transform: translatey(8px) scalex(1);
+				}
 			}
 		}
 	}
@@ -768,7 +775,6 @@ footer{
 		margin-top: 41vh;
 		margin-left: 0%;
 		width: 9vw;
-
 	}
 	.sceneFPPol2{
 		margin-top: 34vh;
@@ -821,7 +827,6 @@ footer{
 
 	}
 	.sceneFPTring1{
-	
 		margin-top: 10vh;
 		margin-left: -10%;
 		width: 10vw;
@@ -840,7 +845,7 @@ footer{
 	}
 }
 .transition{
-	transition-duration: .3s;
+	transition-duration: .5s;
 }
 
 
