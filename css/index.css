@@ -991,6 +991,11 @@ footer {
     margin-left: 110%;
     width: 5vw; }
 
+.transition {
+  -webkit-transition-duration: .3s;
+  -o-transition-duration: .3s;
+  transition-duration: .3s; }
+
 @media screen and (min-width: 2000px) {
   .content_first_page {
     width: 1160px;
