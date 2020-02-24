@@ -12,7 +12,7 @@ var activeSlide = 0;
 
 
 window.addEventListener('mousewheel', horizonScrollMouse);
-document.addEventListener('keydown', horizonScrollKeyboard);
+window.addEventListener('keydown', horizonScrollKeyboard);
 
 
 function horizonScrollKeyboard(event) 
