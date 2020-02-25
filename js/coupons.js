@@ -7,7 +7,7 @@ window.onload = function(){
 
 var width = window.innerWidth;
 var section = document.querySelector('.section');
-var chekpoints = [0, -width, -width*2, -width *3, -width*4, -width*5];
+var chekpoints = [0, -width, -width*2, -width *3, -width*4, -width*5, -width*6];
 var activeSlide = 0;
 
 
@@ -40,7 +40,7 @@ function horizonScrollMouse(event)
 
 function nextSlide()
 {
-    if(activeSlide < 5)
+    if(activeSlide < 6)
     {
         activeSlide +=1;    
     }
