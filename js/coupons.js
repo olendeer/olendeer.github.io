@@ -10,10 +10,8 @@ var section = document.querySelector('.section');
 var chekpoints = [0, -width, -width*2, -width *3, -width*4, -width*5, -width*6];
 var activeSlide = 0;
 
-
 window.addEventListener('mousewheel', horizonScrollMouse);
 window.addEventListener('keydown', horizonScrollKeyboard);
-
 
 function horizonScrollKeyboard(event) 
 {
@@ -24,7 +22,8 @@ function horizonScrollKeyboard(event)
     else if(event.code == 'ArrowRight' || event.code == 'ArrowDown'){
         nextSlide();
     }
-};
+}
+
 function horizonScrollMouse(event)
 {
     if(event.deltaY > 0){ 
@@ -35,9 +34,6 @@ function horizonScrollMouse(event)
     }
 }
 
-
-
-
 function nextSlide()
 {
     if(activeSlide < 6)
@@ -46,6 +42,7 @@ function nextSlide()
     }
     section.style.transform = 'translateX(' + chekpoints[activeSlide] + 'px)';
 }
+
 function prevSlide()
 {
     if(activeSlide > 0)
@@ -54,6 +51,41 @@ function prevSlide()
     }
     section.style.transform = 'translateX(' + chekpoints[activeSlide] + 'px)';
 }
+
+var champions = document.querySelectorAll('.champions');
+for(var i = 0;i < champions.length; i++)
+{
+    champions[i].addEventListener('mouseenter', function(){
+        window.removeEventListener('mousewheel', horizonScrollMouse);
+    });
+    champions[i].addEventListener('mouseleave', function(){
+        window.addEventListener('mousewheel', horizonScrollMouse);
+    });
+}
+
+var lots = document.querySelectorAll('.lots');
+for(var i = 0;i < champions.length; i++)
+{
+    lots[i].addEventListener('mouseenter', function(){
+        window.removeEventListener('mousewheel', horizonScrollMouse);
+    });
+    lots[i].addEventListener('mouseleave', function(){
+        window.addEventListener('mousewheel', horizonScrollMouse);
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 // $(document).ready(function(){
 //     $('.loader').animate({
 //         opacity: 0
