@@ -12,20 +12,11 @@ for(var i = 0; i < comment.length; i++)
 	comment[i].addEventListener('mousemove', function(event){
 		this.classList.remove('comment_comeback');
 		var coordinateComment = this.getBoundingClientRect();
-		var rotateX = (coordinateComment.left + this.offsetWidth/2)-event.clientX;
+		var rotateX = (coordinateComment.left + this.offsetWidth/2) - event.clientX;
 		rotateX = -rotateX/70;
-		console.log(rotateX);
-		var rotateY = (coordinateComment.top + this.offsetHeight/2)-event.clientY;
+		var rotateY = (coordinateComment.top + this.offsetHeight/2) - event.clientY;
 		rotateY = rotateY/20;
-		console.log(rotateY);
 		this.style.transform = 'rotateY(' + rotateX + 'deg) rotateX(' + rotateY + 'deg)';
-
-
-
-		// console.log(coordinateComment.left);
-		// console.log(coordinateComment.top);
-		// console.log(this.offsetWidth);
-		event.clientX
 	});
 	comment[i].addEventListener('mouseout', function(event){
 		this.classList.add('comment_comeback');
