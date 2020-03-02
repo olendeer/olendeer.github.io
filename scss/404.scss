@@ -1,0 +1,133 @@
+@import 'header.scss';
+section{
+	width: 100vw;
+	height: 100vh;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 80px 0 80px 0;
+}
+.content{
+	margin-top: 16.203vh;
+	margin-left: 21.6145%;
+}
+.header-content{
+	font-size: 1.5rem;
+	color: $colorBlue;
+	font-weight: 800;
+	margin-bottom: 4.16vh;
+}
+.error{
+	display: flex;
+	align-items: center;
+	padding-left: 70px;
+	.title-error{
+		display: flex;
+		flex-direction: column;
+		padding: 40px 0px 15px;
+		span{
+			font-size: 10rem;
+			color: $colorBlue;
+			opacity: .7;
+			font-weight: 900;
+		}
+		.lost-page{
+			font-size: 1rem;
+			color: $colorBlue;
+			font-weight: 600;
+			margin-top: 7.407vh;
+			margin-bottom: 6.481vh;
+			opacity: 1;
+		}
+		.error-btn{
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-sizing: border-box;
+			border: 3px solid $colorViolet;
+			border-radius: 40px;
+			font-weight: bold;
+			transition-duration: .3s;
+			background-color: $colorViolet;
+			color: white;
+			width: 220px;
+			height: 70px;
+			&:hover{
+				background-color: white;
+				color: $colorViolet;
+			}
+		}
+	}
+}
+.img-error{
+	margin-left: 13.020vw;
+	img{
+		width: 430px;
+		height: 445px;
+	}
+}
+
+@media screen and (min-width: 2000px){
+	.content{
+		width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media screen and (max-width: 1900px){
+	.content{
+		width: 1160px;
+		margin-left: 19.6145%;
+	}
+}
+@media screen and (max-width: 1680px){
+	section{
+		padding: 65px 0px 65px 0px;
+	}
+	.content{
+		width: 1100px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media screen and (max-width: 1600px){
+	section{
+		padding: 40px 0px 40px 0px;
+	}
+	.content{
+		width: 1000px;
+	}
+	.error{
+		.title-error{
+			.error-btn{
+				width: 165px;
+				height: 52.5px;
+				border: 2.25px solid $colorViolet;
+			}
+		}
+	}
+	.img-error img {
+	    width: 400px;
+	    height: 415px;
+	}
+}
+@media screen and (max-height: 700px){
+	.content {
+	    width: 935px;
+	}
+	.img-error img {
+	    width: 380px;
+	    height: 400px;
+	}
+}
+@media screen and (max-width: 1156px){
+	.error{
+		padding-left: 0px;
+	}
+	.content{
+		width: 860px;
+	}
+}
