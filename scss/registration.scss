@@ -82,6 +82,7 @@ section{
 	position: relative;
 	width: 34.1145vw;
 	max-width: 100%;
+	min-width: 100px;
 	height: 100px;
 	box-sizing: border-box;
 	border: 3px solid rgba($colorBlue, .3);
@@ -89,10 +90,11 @@ section{
 	display: flex;
 	cursor: pointer;
 	margin-bottom: 20px;
+	transition-duration: .3s;
 }
 .foto-avatar{
-	height: 94px;
-	width: 94px;
+	min-height: 94px;
+	min-width: 94px;
 	box-sizing: border-box;
 	border: 3px solid #84c4f8;
 	background-color: $colorBlue;
@@ -100,8 +102,23 @@ section{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	svg{
+		width: 110%;
+		height: 110%;
+		position: absolute;
+		transform: rotate(-90deg);
+		circle{
+			transform-origin: center;
+			transition-duration: .7s;
+			stroke: white;
+			stroke-dashoffset: 55;
+   			stroke-dasharray: 0 225;
+		}
+	}
 	img{
 		height: 50%;
+		transition-duration: .3s;
 	}
 }
 .drop-zone{
@@ -110,14 +127,50 @@ section{
 	align-items: center;
 	margin-left: 2.083vw;
 	justify-content: center;
-	img{
-		width: 21px;
-		height: 21px;
+	transition-duration: .2s;
+	svg{
+		max-width: 21px;
+		max-height: 21px;
 		margin-bottom: 15px;
+		path{
+			fill: $colorBlue;
+			transition-duration: .3s;
+		}
 	}
 	span{
 		color: $colorBlue;
 		font-size: 0.6rem;
+		transition-duration: .3s;
+	}
+	.wrap_check_img{
+		width: 0px;
+		overflow: hidden;
+		display: none;
+		margin-left: 10px;
+		transition-duration: .3s;
+		img{
+			min-width: 15px;
+			width: 15px;
+		}
+	}
+}
+.draganddrop{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.active_label_avatar{
+	background-color: $colorBlue;
+	border: 3px solid rgba($colorBlue, .3);
+	.drop-zone{
+		svg > path{
+			fill: white;
+		}
+		span{
+			color: white;
+		}
 	}
 }
 .attention{
@@ -240,15 +293,24 @@ input[type="checkbox"]{
 }
 
 .error{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: absolute;
+	padding: 10px 30px;
+	box-sizing: border-box;
 	opacity: 0;
 	height: 70%;
 	right: calc(-245px);
-	opacity: 1;
 	width: 250px;
 	background: linear-gradient(to right, $colorBlue, #4d84f0);
 	border-radius: 15px;
 	transform: translateY(9%);
+	transition-duration: .3s;
+	color: white;
+	font-size: 0.5rem;
+	font-weight: 700;
+	line-height: 12px;
 }
 .registration-btn{
 	@include buttonViolet(220px,70px);
@@ -321,6 +383,11 @@ input[type="checkbox"]{
 		border-right: 1.75px solid  rgba(#757575, 0.8);
 		transform: rotate(45deg);
 	}
+	.error{
+		right: calc(135px);
+		height: 625%;
+		top: -300%;
+	}
 }
 
 .active_checkbox{
@@ -380,6 +447,9 @@ input[type="checkbox"]{
 		width: 198px;
 		height: 63px;
 	}
+	.rule .error {
+    	right: calc(70px);
+    }
 }
 @media screen and (max-width: 1600px){
 	section{
@@ -393,15 +463,19 @@ input[type="checkbox"]{
 	}
 	.label-avatar{
 		height: 80px;
+		min-width: 80px;
 		border: 2.25px solid #84c4f8;
 		.foto-avatar{
-			width: 75.5px;
-			height: 75.5px;
+			min-width: 75.5px;
+			min-height: 75.5px;
 			border: 2.25px solid #84c4f8;
 		}
 	}
 	.input-data{
-		width: 510px;
+		min-width: 510px;
+	}
+	.wrap_input:before {
+		left: -8px;
 	}
 	input{
 		width: 165px;
@@ -432,6 +506,16 @@ input[type="checkbox"]{
 			height: 7px;
 		}
 	}
+	.error{
+		width: 200px;
+		right: -200px;
+	}
+	.rule{
+		.error{
+			right: auto;
+   			left: 180px;	
+		}
+	}
 	.img{
 		display: flex;
 		justify-content: center;
@@ -441,6 +525,11 @@ input[type="checkbox"]{
 		}
 	}
 } 
+@media screen and (max-width: 1280px){
+	.content {
+	    width: 910px;
+	}
+}
 @media screen and (max-height: 900px){
 	.content{
 		margin-top: 8vh;

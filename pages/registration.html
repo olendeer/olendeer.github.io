@@ -44,15 +44,24 @@
 			<div class="header-content">Регистрация</div>
 			<div class="body-content">
 				<div class="input-data">
-					<input class="avatar" id="avatar" type="file">
-					<label class="label-avatar" for="avatar">
+					<input class="avatar" id="avatar" type="file" onchange="getAvatar(this.files);">
+					<div class="label-avatar">
 						<div class="foto-avatar">
+							<svg>
+								<circle cx="39" cy="39" r="37" fill="transparent" stroke-width="3"/>
+							</svg>
 							<img src="../img/registration/icon/user.svg" alt="">
 						</div>
 						<span class="drop-zone">
-							<img src="../img/registration/icon/move.svg" alt="">
+							<svg height="30px" viewBox="0 0 512 512" width="30px" xmlns="http://www.w3.org/2000/svg">
+								<path d="m354 60c0-33.085938-26.914062-60-60-60h-234c-33.085938 0-60 26.914062-60 60v234c0 33.085938 26.914062 60 60 60h96v40h40v-40h98c33.085938 0 60-26.914062 60-60v-96h39v-40h-39zm-40 234c0 11.027344-8.972656 20-20 20h-234c-11.027344 0-20-8.972656-20-20v-234c0-11.027344 8.972656-20 20-20h234c11.027344 0 20 8.972656 20 20zm158 138h40v40c0 22.089844-17.910156 40-40 40h-39v-40h39zm-199 40h40v40h-40zm80 0h40v40h-40zm159-274v40h-40v-40h-39v-40h39c22.089844 0 40 17.910156 40 40zm-40 78h40v40h-40zm0 78h40v40h-40zm-276 118h39v40h-39c-22.089844 0-40-17.910156-40-40v-40h40zm37-318h40v120h-120v-40h51.714844l-71.359375-71.359375 28.285156-28.28125 71.359375 71.355469zm0 0"/>
+							</svg>
 							<span>Нажмите чтобы выбрать или перетащите файл сюда</span>
+							<div class="wrap_check_img">
+								<img src="../img/registration/icon/tick.svg" alt="">
+							</div>
 						</span>
+						<label class="draganddrop" for="avatar"></label>
 						<div class="attention">
 							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 							viewBox="0 0 486.463 486.463" style="enable-background:new 0 0 486.463 486.463;" xml:space="preserve">
@@ -80,16 +89,16 @@
 								<div class="text-attention">Просьба загружать фотографии с Вашим лицом - это может потребоваться при восстановлении доступа! </div>
 							</div>
 						</div>
-					</label>
-					<div class="wrap_input">
-						<input type="text" placeholder="Имя" maxlength="32">
 					</div>
 					<div class="wrap_input">
-						<input id="login" type="text" placeholder="Логин" maxlength="32">
+						<input id="name" class="login" type="text" placeholder="Имя" maxlength="32">
+					</div>
+					<div class="wrap_input">
+						<input id="login"class="login" type="text" placeholder="Логин" maxlength="32">
 						<div class="error error-login"></div>
 					</div>
 					<div class="wrap_input">
-						<input id="password" type="password" placeholder="Пароль" maxlength="32">
+						<input id="password" class="password" type="password" placeholder="Пароль" maxlength="32">
 						<label class="eye" for="password">
 							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
 								<g>
@@ -100,7 +109,7 @@
 						</label>
 					</div>
 					<div class="wrap_input">
-						<input id="verification" type="password" placeholder="Подтверждение" maxlength="32">
+						<input id="verification" class="password" type="password" placeholder="Подтверждение" maxlength="32">
 						<label class="eye" for="verification">
 							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" xml:space="preserve">
 								<g>
@@ -112,7 +121,7 @@
 						<div class="error error-password"></div>
 					</div>
 					<div class="wrap_input">
-						<input type="email" placeholder="Почта" maxlength="32">
+						<input id="email" class="email" type="email" placeholder="Почта" maxlength="32">
 						<div class="error error-email"></div>
 					</div>
 					<a href="" class="registration-btn"><span>Регистрация</span>
@@ -121,7 +130,8 @@
 						</svg>
 					</a>
 					<input id="rule" type="checkbox">
-					<label class="rule" for="rule">Coгласен с <a href="">Пользовательским соглашением</a></label>
+					<label class="rule" for="rule">Coгласен с <a href="">Пользовательским соглашением</a>
+					<div class="error error-rule"></div></label>
 				</div>
 				<div class="img">
 					<img src="../img/registration/img1.png" alt="">

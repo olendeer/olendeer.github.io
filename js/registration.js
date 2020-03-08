@@ -4,16 +4,93 @@ window.onload = function(){
     // var sceneFirstSection = $('#sceneFirstSection').get(0);
     // var parallaxInstance = new Parallax(sceneFirstSection);
 }
-var input_login = document.querySelector('#login');
-var input_password = document.querySelector('#password');
-var input_verification = document.querySelector('#verification');
-window.onresize = function(){
 
-};
+var draganddrop = document.querySelector('.draganddrop');
+var drop_zone = document.querySelector('.label-avatar');
+var content = document.querySelector('.drop-zone');
+var avatar = document.querySelector('.foto-avatar');
+var progress_bar = document.querySelector('.foto-avatar > svg > circle');
+var widthCircle = 2 * Math.PI * progress_bar.r.baseVal.value;
+progress_bar.style.strokeDashoffset = widthCircle;
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+	draganddrop.addEventListener(eventName, preventDefaults, false);
+});
+function preventDefaults(event) 
+{
+	event.preventDefault();
+	event.stopPropagation();
+}
+draganddrop.addEventListener('dragenter', function(event){
+	drop_zone.classList.add('active_label_avatar');
+	drop_zone.style.borderColor = '#84c4f8';
+});
+draganddrop.addEventListener('dragleave', function(event){
+	drop_zone.classList.remove('active_label_avatar');
+});
+draganddrop.addEventListener('drop', getAvatar, false);
+
+function getAvatar(files)
+{
+	let upload_file;
+	if(files[0] == undefined)
+	{
+
+		upload_file = files.dataTransfer.files[0];
+	}
+	else
+	{
+		drop_zone.classList.add('active_label_avatar');
+		upload_file = files[0];
+	}
+	if(!/image/.test(upload_file.type))
+	{
+		drop_zone.style.borderColor = '#EE8788';
+		drop_zone.classList.remove('active_label_avatar');
+		console.log('Не картинка');
+		return false;
+	}
+
+	content.style.opacity = '0';
+	var width_drop_zone = drop_zone.offsetWidth;
+	setTimeout(function(){
+		drop_zone.style.width = avatar.offsetWidth + 'px';
+		drop_zone.style.marginRight = (width_drop_zone - avatar.offsetWidth - 20) + 'px';
+	},200);
+	setTimeout(function(){
+		document.querySelector('.foto-avatar > img').style.opacity = '0';
+	},700);
+	setTimeout(function(){
+		drop_zone.style.transitionDuration = '1s';
+		drop_zone.style.width = width_drop_zone + 'px';
+		drop_zone.style.marginRight = '0px';
+		content.style.flexDirection = 'row';
+		document.querySelector('.drop-zone > svg').style.display = 'none';
+		document.querySelector('.drop-zone > span').innerHTML = 'Аватар загружен';
+		document.querySelector('.drop-zone > span').style.fontSize = '0.8rem';
+		document.querySelector('.drop-zone > span').style.fontWeight = '600';
+		document.querySelector('.drop-zone > .wrap_check_img').style.display = 'block';
+	},900);
+	setTimeout(function(){
+		progress_bar.style.strokeDashoffset = widthCircle * 2;
+		progress_bar.style.strokeDasharray = `${widthCircle} ${widthCircle}`;
+		content.style.opacity = '1';
+	},1200);
+	setTimeout(function(){
+		document.querySelector('.drop-zone > .wrap_check_img').style.width = '15px';
+	},2500);
+	['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+		draganddrop.removeEventListener(eventName, preventDefaults, false);
+	});
+}
+
+
+
 
 var checkbox = document.querySelector('.rule');
+var checkbox_error = document.querySelector('.error-rule');
 checkbox.addEventListener('click' ,function(){
 	this.classList.toggle('active_checkbox');
+	checkbox_error.style.opacity = 0;
 });
 
 document.querySelectorAll('.eye').forEach(function(eye){
@@ -30,48 +107,129 @@ document.querySelectorAll('.eye').forEach(function(eye){
 		}
 	});
 });
-
-var input = document.querySelectorAll('input');
+var input = document.querySelectorAll('input:not(#rule):not(#avatar)');
+var min_length = 4;
+var error_sensor = false;
 for(var i = 0; i < input.length; i++)
 {
 	input[i].addEventListener('input', function(){
-		if(this.value.length > 0 && this.value.length <= 4)
+		if(this.id == 'password' || this.id == 'verification')
+		{
+			min_length = 8;
+		}
+		else
+		{
+			min_length = 4;
+		}
+		var error = document.querySelector('.error-' + this.className);
+		if(this.value.length > 0 && this.value.length <= min_length)
 		{
 			this.style.borderColor = '#2196f3';
 			this.style.color = '#2196f3';
+			error.style.opacity = 0;
 		}
-		else if(this.value.length > 4 && this.value.length < 32)
+		else if(this.value.length > min_length && this.value.length < 32)
 		{
 			this.style.borderColor = '#4CAF50';
 			this.style.color = '#4CAF50';
+			error.style.opacity = 0;
 		}
 		else if(this.value.length == 32)
 		{
+			error_sensor = true;
+			error.style.opacity = 1;
+			error.innerHTML = 'Слишком много символов!';
 			this.style.borderColor = '#EE8788';
 			this.style.color = '#EE8788';
 		}
 	});
 	input[i].addEventListener('focus', function(){
-		if(this.value.length >= 0 && this.value.length <= 4)
+		if(this.value.length >= 0 && this.value.length <= min_length)
 		{
+			// this.classList.add('active_input');
 			this.style.borderColor = '#2196f3';
 			this.style.color = '#2196f3';
 		}
 	});
 	input[i].addEventListener('blur', function(){
+		var error = document.querySelector('.error-' + this.className);
 		if(this.value.length == 0)
 		{
+			error.style.opacity = 0;
 			this.style.borderColor = '#84c4f8';
 			this.style.color = '#84c4f8';
+		}
+		else if(this.value.length > 0 && this.value.length <= min_length)
+		{
+			error.style.opacity = 1;
+			error_sensor = true;
+			error.innerHTML = 'Слишком мало символов!';
+			this.style.borderColor = '#EE8788';
+			this.style.color = '#EE8788';
 		}
 	});
 }
 
+var btn = document.querySelector('.registration-btn');
+btn.addEventListener('click',{handleEvent: check_input, input: input, error_sensor: error_sensor});
+window.addEventListener('keydown', function(event){
+	if(event.keyCode == 13)
+	{
+		check_input(event, input, error_sensor)
+	}
+});
+function check_input(event, input, error_sensor)
+{
+	event.preventDefault()
+	for(var i = 0; i < this.input.length; i++)
+	{
+		if(this.input[i].value.length == 0)
+		{
+			error_sensor = error_show(i, error_sensor, this.input[i].className, 'Вы ничего не ввели!')
+		}
+	}
+	var regexp_name = /[^a-zA-Za-яА-Я ]/g;
+	var regexp_login = /[^a-zA-Z0-9_]/g;
+	if(regexp_name.test(this.input[0].value) == true)
+	{
+		error_sensor = error_show(0, error_sensor,'login', 'Вы ввели недопустимый символ!');
+	}
+	else if(regexp_login.test(this.input[1].value) == true)
+	{
+		error_sensor = error_show(1, error_sensor,'login', 'Вы ввели недопустимый символ!');
+		//login ajax
+	}
+	if(this.input[2].value != this.input[3].value)
+	{
+		error_sensor = error_show(3, error_sensor,'password', 'Пароли не совпадают!');
+	}
+	var checkbox = document.querySelector('#rule');
+	if(!checkbox.checked)
+	{
+		error_sensor = error_show(null, error_sensor,'rule', 'Ознакомтесь с пользовательским соглашением!');
+	}
+	//email ajax
+	
+	// console.log(error_sensor);
+	if(!error_sensor)
+	{
+		//функция отправки данных по ajax
+	}
+}
 
-
-
-
-
+function error_show(error_num, error_sensor, error_selector, error_text)
+{
+	if(error_num != null)
+	{
+		this.input[error_num].style.borderColor = '#EE8788';
+		this.input[error_num].style.color = '#EE8788';
+	}
+	error_sensor = true;
+	error = document.querySelector('.error-' + error_selector);
+	error.style.opacity = 1;
+	error.innerHTML = error_text;
+	return error_sensor;
+}
 
 
 
@@ -123,14 +281,6 @@ for(var i = 0; i < input.length; i++)
 // 		window.location.href = '../index.php';
 // 	});
 	// let dropArea = document.getElementById('dragAndDrop');
-	// ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-	// 	dropArea.addEventListener(eventName, preventDefaults, false);
-	// });
-	// function preventDefaults(e) 
-	// {
-	// 	e.preventDefault();
-	// 	e.stopPropagation();
-	// }
 	// ['dragenter', 'dragover'].forEach(eventName => {
 	//     dropArea.addEventListener(eventName, function()
 	//     	{
