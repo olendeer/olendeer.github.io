@@ -3,28 +3,102 @@ window.onload = function(){
     body.style.visibility = 'visible';
     // var sceneFirstSection = $('#sceneFirstSection').get(0);
     // var parallaxInstance = new Parallax(sceneFirstSection);
+	let animation_time = 0;
+	comment.forEach((element) => {
+		animation_time += 150;
+		setTimeout(function(){
+			element.style.opacity = '1';
+		},animation_time);
+		element.addEventListener('mousemove', function(event){
+			this.classList.remove('comment_comeback');
+			var coordinateComment = this.getBoundingClientRect();
+			var rotateX = (coordinateComment.left + this.offsetWidth/2) - event.clientX;
+			rotateX = -rotateX/70;
+			var rotateY = (coordinateComment.top + this.offsetHeight/2) - event.clientY;
+			rotateY = rotateY/20;
+			this.style.transform = 'rotateY(' + rotateX + 'deg) rotateX(' + rotateY + 'deg)';
+		});
+		element.addEventListener('mouseout', function(event){
+			this.classList.add('comment_comeback');
+			this.style.transform = 'rotateY(0deg) rotateX(0deg)';
+		});
+
+	})
 }
+
+
 
 
 var comment = document.querySelectorAll('.comment');
-for(var i = 0; i < comment.length; i++)
-{
-	comment[i].addEventListener('mousemove', function(event){
-		this.classList.remove('comment_comeback');
-		var coordinateComment = this.getBoundingClientRect();
-		var rotateX = (coordinateComment.left + this.offsetWidth/2) - event.clientX;
-		rotateX = -rotateX/70;
-		var rotateY = (coordinateComment.top + this.offsetHeight/2) - event.clientY;
-		rotateY = rotateY/20;
-		this.style.transform = 'rotateY(' + rotateX + 'deg) rotateX(' + rotateY + 'deg)';
+let from = 0;
+let to = 6;
+function animationNewPage(comments, arrow){
+	console.log(arrow);
+	let translate;
+	let animation_time = 0;
+	if(arrow == 'next'){
+		translate = -150;
+		from += 6;
+		to = from + 6;
+		if(to > countComments)
+		{
+			to = countComments;
+		}
+	}
+	else{
+		to = from;
+		from -=6;
+		if(from <= 0)
+		{
+			from = 0;
+			document.querySelector('.prev-arrow').removeEventListener('click',  function(){
+			});
+			to = 6;
+		}
+		translate = 150;
+	}
+	comments.forEach((element) => {
+		animation_time += 50;
+		setTimeout(function(){
+			element.style.transform = 'translateX(' + translate + 'px)';
+			element.style.opacity = 0;
+		},animation_time);
 	});
-	comment[i].addEventListener('mouseout', function(event){
-		this.classList.add('comment_comeback');
-		this.style.transform = 'rotateY(0deg) rotateX(0deg)';
-	});
+	getCommentsPage(from, to);
+}
+
+function getCommentsPage(from, to){
+	// let j = 0;
+	// for(let i = from; i < to; i++){
+	// 	j++;
+	// 	datesComments[j].innetHTML = dataComments[i].date;
+	// 	autorsComments[j].innetHTML = dataComments[i].autors;
+	// 	estimationComments[j].innetHTML = dataComments[i].estimation;
+	// 	textComments[j].innetHTML = dataComments[i].text;
+	// 	telegramComments[j].innetHTML = dataComments[i].telegram;
+	// }
+	console.log(from, to);
 }
 
 
+document.querySelector('.prev-arrow').addEventListener('click', function(){
+	animationNewPage(comment, 'prev');
+});
+document.querySelector('.next-arrow').addEventListener('click', function(){
+	animationNewPage(comment, 'next');
+});
+
+
+let datesComments = document.querySelectorAll('.date-comment');
+let autorsComments = document.querySelectorAll('.author-comment');
+let estimationComments = document.querySelectorAll('.estimation-comment');
+let textComments = document.querySelectorAll('.text-comment');
+let telegramComments = document.querySelectorAll('.telegram-comment');
+
+let countComments = 14;
+let countAllPages = Math.ceil(countComments / 6);
+
+document.querySelector('.all-pages').innerHTML = '0' + countAllPages;
 
 
 

@@ -40,6 +40,7 @@ function checkInput(event)
 	classicInput.checkElements();
 	var regexp_login = /[^a-zA-Z0-9_@\.-]/g;
 	var regexp_email = /@/g;
+	let memory = false;
 	if(regexp_login.test(classicInput.elements[0].value) == true)
 	{
 		classicInput.showError(classicInput.elements[1],'Вы ввели недопустимый символ!');
@@ -52,15 +53,19 @@ function checkInput(event)
 	else{
 		//Ajax check login
 	}
-
+	let checkbox = document.querySelector('#memory');
+	if(checkbox.checked)
+	{
+		memory = true;
+	}
 	if(!classicInput.checkError())
 	{
 		console.log('Login');
 		//Вход
 	}
 }
-var checkbox = document.querySelector('.memory');
-checkbox.addEventListener('click' ,function(){
+var checkbox_label = document.querySelector('.memory');
+checkbox_label.addEventListener('click' ,function(){
 	this.classList.toggle('active_checkbox');
 });
 

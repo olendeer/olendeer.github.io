@@ -41,6 +41,7 @@ class Input{
 		}
 	}
 	focusInput(element){
+		this.hideError(element);
 		if(this.getLengthInput(element) >= 0 && this.getLengthInput(element) <= this.minLength)
 		{
 			this.setNewStyle(element, '#2196f3')
@@ -49,7 +50,6 @@ class Input{
 	blurInput(element){
 		if(this.getLengthInput(element) == 0)
 		{
-			this.hideError(element);
 			this.setNewStyle(element, '#84c4f8');
 		}
 		else if(this.getLengthInput(element)> 0 && this.getLengthInput(element) <= this.minLength)

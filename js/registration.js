@@ -1,8 +1,8 @@
 window.onload = function(){
     var body = document.querySelector('body');
     body.style.visibility = 'visible';
-    // var sceneFirstSection = $('#sceneFirstSection').get(0);
-    // var parallaxInstance = new Parallax(sceneFirstSection);
+    var sceneFirstSection =  document.querySelector('#sceneFirstSection');
+    var parallaxInstance = new Parallax(sceneFirstSection);
 }
 
 var draganddrop = document.querySelector('.draganddrop');

@@ -1,4 +1,4 @@
-@import 'header.scss';
+@import 'modules/header.scss';
 @mixin input{
 	display: flex;
 	border: 3px solid #84c4f8;
@@ -304,6 +304,10 @@ input[type="checkbox"]{
 	.error{
 		width: 200px;
 		right: -20px;
+		font-size: 0.6rem;
+	}
+	.memory{
+		font-size:0.6rem;	
 	}
 	.img{
 		display: flex;

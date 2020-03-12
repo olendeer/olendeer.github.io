@@ -60,6 +60,7 @@ function checkInput(event)
 	else{
 		//Ajax check login
 	}
+	let checkbox = document.querySelector('#rule');
 	if(!checkbox.checked)
 	{
 		classicInput.showError(checkbox_label,'Ознакомтесь с пользовательским соглашением!');

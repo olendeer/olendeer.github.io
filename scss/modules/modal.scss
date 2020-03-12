@@ -1,0 +1,82 @@
+.modal{
+	width: 625px;
+	height: 230px;
+	border-radius: 10px;
+	position: absolute;
+	box-sizing: border-box;
+	bottom: -150px;
+	right: 1vw;
+	opacity: 0;
+	padding: 35px 25px;
+	background: linear-gradient(to right, $colorBlue, #4d84f0);
+	display: flex;
+	transition-duration: .3s;
+	box-shadow: 0px 0px 15px rgba(black, .5);
+	.content-modal{
+		min-width: 70%;
+		.text-modal{
+			font-size: 0.9rem;
+			color: white;
+			line-height: 30px;
+			font-weight: bold;
+		}
+		.okey-btn{
+			@include buttonViolet(165px ,55px);
+			background-color: white;
+			color: $colorBlue;
+			margin-top: 45px;
+			font-weight: 700;
+			border-color: white;
+			font-size: 0.6rem;
+			cursor: pointer;
+			&:hover{
+				font-weight: 700;
+				color: white;
+				background-color: $colorBlue;
+			}
+		}
+	}
+	.img-modal{
+		display: flex;
+		justify-content: flex-end;
+		img{
+			width: 90%;
+			height: 100%;
+		}
+	}
+	.close-modal{
+		cursor: pointer;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 25px;
+		background-color: #EE8788;
+		border-radius: 5px;
+		right: 10px;
+		top: 10px;
+		img{
+			transform: translateX(-1px);
+			width: 40%;
+			height: 40%;
+		}
+	}
+}
+@media screen and (max-width: 1600px){
+	.modal{
+		width: 565px;
+   	 	height: 180px;
+   	 	.content-modal{
+   	 		min-width: 75%;
+   	 		.text-modal{
+   	 			line-height: 20px;
+   	 		}
+   	 		.okey-btn{
+   	 			width: 123px;
+   	 			height: 41px;
+   	 			margin-top: 30px;
+   	 		}
+   	 	}
+	}
+}

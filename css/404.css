@@ -8,7 +8,8 @@ html {
   backface-visibility: hidden; }
 
 body {
-  visibility: hidden; }
+  visibility: hidden;
+  overflow: hidden; }
 
 a {
   text-decoration: none; }

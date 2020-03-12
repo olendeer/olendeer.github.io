@@ -587,7 +587,10 @@ input[type="checkbox"] {
       height: 7px; }
   .error {
     width: 200px;
-    right: -20px; }
+    right: -20px;
+    font-size: 0.6rem; }
+  .memory {
+    font-size: 0.6rem; }
   .img {
     display: -webkit-box;
     display: -ms-flexbox;

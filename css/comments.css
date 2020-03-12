@@ -8,7 +8,8 @@ html {
   backface-visibility: hidden; }
 
 body {
-  visibility: hidden; }
+  visibility: hidden;
+  overflow: hidden; }
 
 a {
   text-decoration: none; }
@@ -302,7 +303,15 @@ section {
   background: -webkit-linear-gradient(left, #2196f3, #4d84f0);
   background: -o-linear-gradient(left, #2196f3, #4d84f0);
   background: linear-gradient(to right, #2196f3, #4d84f0);
-  margin-bottom: 45px; }
+  margin-bottom: 45px;
+  opacity: 0;
+  -webkit-transition-duration: .3s;
+  -o-transition-duration: .3s;
+  transition-duration: .3s; }
+  .comment:hover {
+    -webkit-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s; }
   .comment:nth-child(6), .comment:nth-child(5) {
     margin-bottom: 20px; }
 
@@ -439,7 +448,13 @@ section {
       justify-content: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+      cursor: pointer;
+      -webkit-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s; }
+      .nav-pages .nav-arrows .arrow:hover {
+        background-color: #0d8aee; }
       .nav-pages .nav-arrows .arrow svg {
         width: 30%;
         height: 30%; }

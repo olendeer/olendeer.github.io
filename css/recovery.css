@@ -8,7 +8,8 @@ html {
   backface-visibility: hidden; }
 
 body {
-  visibility: hidden; }
+  visibility: hidden;
+  overflow: hidden; }
 
 a {
   text-decoration: none; }
@@ -480,7 +481,7 @@ input[type="checkbox"] {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg); }
   .rule .error {
-    right: calc(135px);
+    right: 45px;
     height: 625%;
     top: -300%; }
 
@@ -581,9 +582,13 @@ input[type="checkbox"] {
     height: 63px; }
   .eye {
     height: 63px; }
+  .error {
+    right: 80px; }
   .send-btn {
     width: 198px;
-    height: 63px; } }
+    height: 63px; }
+  .rule .error {
+    right: 70px; } }
 
 @media screen and (max-width: 1600px) {
   section {
@@ -599,6 +604,7 @@ input[type="checkbox"] {
   .content-attention {
     width: 300px; }
     .content-attention .text-attention {
+      font-size: 0.6rem;
       max-width: 230px; }
   input {
     width: 165px;
@@ -625,6 +631,7 @@ input[type="checkbox"] {
       width: 10px;
       height: 7px; }
   .error {
+    font-size: 0.6rem;
     width: 200px;
     right: -20px; }
   .img {
@@ -638,7 +645,12 @@ input[type="checkbox"] {
     -ms-flex-align: center;
     align-items: center; }
     .img img {
-      width: 70%; } }
+      width: 70%; }
+  .rule {
+    font-size: 0.6rem; }
+    .rule .error {
+      right: -95px;
+      width: 230px; } }
 
 @media screen and (max-width: 1280px) {
   .content {

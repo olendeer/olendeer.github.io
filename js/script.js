@@ -1,9 +1,93 @@
 window.onload = function(){
     var body = document.querySelector('body');
     body.style.visibility = 'visible';
-    var sceneFirstSection = $('#sceneFirstSection').get(0);
+    var sceneFirstSection =  document.querySelector('#sceneFirstSection');
     var parallaxInstance = new Parallax(sceneFirstSection);
     leftMargin();
+    var background = document.querySelectorAll('#sceneFirstSection > *');
+    var advan = document.querySelectorAll('.advan');
+    var place = 0;
+    new fullpage('#fullpage',{
+        anchors:['first_page', 'second_page', 'third_page'],
+        scrollBar: false,
+        autoScrolling: true,
+        scrollingSpeed: 450,
+        loopBottom: true,
+        onLeave: function(origin, destination, direction){
+            if(destination.index == 0){
+                for(var i = 0; i < 4; i++){
+                    advan[i].classList.remove('comeback_advan');
+                }
+                place = ['-4%', '0%', '6%', '6%', '54%', '46%', '61%','68%', '55%', '85%', '-20%', '-20%', '120%'];
+                for(var i = 0; i < background.length; i++)
+                {
+                    background[i].classList.add('transition');
+                    background[i].style.marginLeft = place[i];
+                }
+                background[0].style.marginTop = '10vh';
+                background[1].style.marginTop = '41vh';
+                background[2].style.marginTop = '34vh';
+                background[3].style.marginTop = '54vh';
+                background[5].style.opacity = '1';
+                background[7].style.opacity = '1';
+                background[8].style.opacity = '1';
+                background[9].style.opacity = '1';
+                setTimeout(function(){
+                    for(var i = 0; i < background.length; i++)
+                    {
+                       background[i].classList.remove('transition');
+                    }
+                },500);
+            }
+            else if(destination.index == 1){
+                for(var i = 0; i < 4; i++){
+                    advan[i].classList.add('comeback_advan');
+                }
+                place = ['2%', '6%', '12%', '12%', '57%', '73%', '65%','68%', '55%', '85%', '7%', '12%', '60%'];
+                for(var i = 0; i < background.length; i++)
+                {
+                    background[i].classList.add('transition');
+                    background[i].style.marginLeft = place[i];
+                }
+                background[0].style.marginTop = '35vh';
+                background[1].style.marginTop = '60vh';
+                background[2].style.marginTop = '73vh';
+                background[3].style.marginTop = '57vh';
+                background[5].style.opacity = '0';
+                background[7].style.opacity = '0';
+                background[8].style.opacity = '0';
+                background[9].style.opacity = '0';
+                setTimeout(function(){
+                    for(var i = 0; i < background.length; i++)
+                    {
+                       background[i].classList.remove('transition');
+                    }
+                },500)
+            }
+            else if(destination.index == 2){
+                place = ['2%', '-30%', '-30%', '-30%', '57%', '49%', '-10%','68%', '55%', '85%', '-30%', '-30%', '60%'];
+                for(var i = 0; i < background.length; i++)
+                {
+                    background[i].classList.add('transition');
+                    background[i].style.marginLeft = place[i];
+                }
+                background[0].style.marginTop = '10vh';
+                background[1].style.marginTop = '60vh';
+                background[2].style.marginTop = '73vh';
+                background[3].style.marginTop = '57vh';
+                background[5].style.opacity = '1';
+                background[7].style.opacity = '0';
+                background[8].style.opacity = '0';
+                background[9].style.opacity = '0';
+                setTimeout(function(){
+                    for(var i = 0; i < background.length; i++)
+                    {
+                       background[i].classList.remove('transition');
+                    }
+                },500)
+            }
+        }
+    });
 }
 window.onresize = leftMargin;
 
@@ -102,90 +186,8 @@ function leftMargin(){
     // $('.save').delay(850).animate({
     //     opacity : 1
     // },300);
-    var background = document.querySelectorAll('#sceneFirstSection > *');
-    var advan = document.querySelectorAll('.advan');
-    var place = 0;
-    $('#fullpage').fullpage({
-        anchors:['first_page', 'second_page', 'third_page'],
-        scrollBar: false,
-        autoScrolling: true,
-        scrollingSpeed: 450,
-        loopBottom: true,
-        onLeave: function(origin, destination, direction){
-            if(destination.index == 0){
-                for(var i = 0; i < 4; i++){
-                    advan[i].classList.remove('comeback_advan');
-                }
-                place = ['-4%', '0%', '6%', '6%', '54%', '46%', '61%','68%', '55%', '85%', '-20%', '-20%', '120%'];
-                for(var i = 0; i < background.length; i++)
-                {
-                    background[i].classList.add('transition');
-                    background[i].style.marginLeft = place[i];
-                }
-                background[0].style.marginTop = '10vh';
-                background[1].style.marginTop = '41vh';
-                background[2].style.marginTop = '34vh';
-                background[3].style.marginTop = '54vh';
-                background[5].style.opacity = '1';
-                background[7].style.opacity = '1';
-                background[8].style.opacity = '1';
-                background[9].style.opacity = '1';
-                setTimeout(function(){
-                    for(var i = 0; i < background.length; i++)
-                    {
-                       background[i].classList.remove('transition');
-                    }
-                },500);
-            }
-            else if(destination.index == 1){
-                for(var i = 0; i < 4; i++){
-                    advan[i].classList.add('comeback_advan');
-                }
-                place = ['2%', '6%', '12%', '12%', '57%', '73%', '65%','68%', '55%', '85%', '7%', '12%', '60%'];
-                for(var i = 0; i < background.length; i++)
-                {
-                    background[i].classList.add('transition');
-                    background[i].style.marginLeft = place[i];
-                }
-                background[0].style.marginTop = '35vh';
-                background[1].style.marginTop = '60vh';
-                background[2].style.marginTop = '73vh';
-                background[3].style.marginTop = '57vh';
-                background[5].style.opacity = '0';
-                background[7].style.opacity = '0';
-                background[8].style.opacity = '0';
-                background[9].style.opacity = '0';
-                setTimeout(function(){
-                    for(var i = 0; i < background.length; i++)
-                    {
-                       background[i].classList.remove('transition');
-                    }
-                },500)
-            }
-            else if(destination.index == 2){
-                place = ['2%', '-30%', '-30%', '-30%', '57%', '49%', '-10%','68%', '55%', '85%', '-30%', '-30%', '60%'];
-                for(var i = 0; i < background.length; i++)
-                {
-                    background[i].classList.add('transition');
-                    background[i].style.marginLeft = place[i];
-                }
-                background[0].style.marginTop = '10vh';
-                background[1].style.marginTop = '60vh';
-                background[2].style.marginTop = '73vh';
-                background[3].style.marginTop = '57vh';
-                background[5].style.opacity = '1';
-                background[7].style.opacity = '0';
-                background[8].style.opacity = '0';
-                background[9].style.opacity = '0';
-                setTimeout(function(){
-                    for(var i = 0; i < background.length; i++)
-                    {
-                       background[i].classList.remove('transition');
-                    }
-                },500)
-            }
-        }
-    });
+    // let fullpage = document.querySelector('#fullpage');
+
     // $.fn.fullpage.setAllowScrolling(true);
     // function slowScroll(id) { 
     //     var offset = 0;

@@ -1,4 +1,4 @@
-@import 'header.scss';
+@import 'modules/header.scss';
 @mixin input{
 	display: flex;
 	border: 3px solid #84c4f8;
@@ -191,7 +191,7 @@ input[type="checkbox"]{
 		transform: rotate(45deg);
 	}
 	.error{
-		right: calc(135px);
+		right: 45px;
 		height: 625%;
 		top: -300%;
 	}
@@ -279,9 +279,15 @@ input[type="checkbox"]{
 	.eye{
 		height: 63px;
 	}
+	.error{
+		right: 80px;
+	}
 	.send-btn{
 		width: 198px;
 		height: 63px;
+	}	
+	.rule .error{
+		right: 70px;
 	}
 }
 
@@ -306,6 +312,7 @@ input[type="checkbox"]{
 	.content-attention{
 		width: 300px;
 		.text-attention{
+			font-size: 0.6rem;
 			max-width: 230px;
 		}
 	}
@@ -336,6 +343,7 @@ input[type="checkbox"]{
 		}
 	}
 	.error{
+		font-size: 0.6rem;
 		width: 200px;
 		right: -20px;
 	}
@@ -345,6 +353,13 @@ input[type="checkbox"]{
 		align-items: center;
 		img{
 			width: 70%;
+		}
+	}
+	.rule {
+		font-size: 0.6rem;
+		.error{
+			right: -95px;
+		    width: 230px;
 		}
 	}
 } 

@@ -30,6 +30,7 @@ html{
 }
 body{
 	visibility: hidden;
+	overflow: hidden;
 }
 
 a{
@@ -70,6 +71,7 @@ header{
 	min-width: 480px;
 	margin-left: 280px;
 	margin-right: 210px;
+	list-style-type: none;
 	li{
 		a{
 			display: -webkit-flex;
